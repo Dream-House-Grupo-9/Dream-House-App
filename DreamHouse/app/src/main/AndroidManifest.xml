@@ -14,6 +14,9 @@
         android:theme="@style/Theme.DreamHouse"
         tools:targetApi="31">
         <activity
+            android:name=".ErrorScreen"
+            android:exported="false" />
+        <activity
             android:name=".LoginScreen"
             android:exported="false" />
         <activity
