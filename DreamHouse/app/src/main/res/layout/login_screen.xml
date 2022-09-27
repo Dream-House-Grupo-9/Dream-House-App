@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
     android:padding="10dp"
     android:background="@color/default_bakground_app"
-    tools:context=".MainActivity">
+    tools:context=".LoginScreen">
 
 
     <LinearLayout
@@ -33,44 +32,47 @@
             android:layout_height="30dp"
             android:src="@drawable/img_logo"
             android:layout_marginLeft="300dp"
-            />
-
+        />
     </LinearLayout>
 
     <ImageView
         android:layout_width="200dp"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:src="@drawable/img_cadastro"
-    />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/img_log"
+        android:layout_marginBottom="15dp"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+    >
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_marginLeft="20dp"
+          android:text="@string/login"
+          android:textSize="20dp"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="2"
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="350dp"
             android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/nomeCompletoET"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_et_base"
-                android:hint="Nome Completo" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="350dp"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailET"
+                android:id="@+id/Et_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_et_base"
@@ -85,9 +87,10 @@
             android:layout_marginTop="20dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/senhaET"
+                android:id="@+id/ET_senha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/bg_et_base"
                 android:hint="Senha" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -97,21 +100,36 @@
             android:layout_gravity="center"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             app:backgroundTint="@color/pink_bakground_app"
             android:fontFamily="arial"
-            android:text="AVANÇAR"
+            android:text="Logar"
             android:textColor="@color/white"
             android:textFontWeight="900" />
 
         <TextView
-            android:id="@+id/txtErrorMessage"
+            android:id="@+id/txt_facaLogin"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
-            android:text="Possui cadastro? Faça login"/>
+            android:textAlignment="center"
+            android:textFontWeight="500"
+            android:text="Esqueceu a senha?"/>
+
+        <TextView
+            android:id="@+id/txt_cadastrese"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textFontWeight="900"
+            android:text="Não possui login? Cadastre-se"/>
     </LinearLayout>
+
+
+
 
 
 </LinearLayout>

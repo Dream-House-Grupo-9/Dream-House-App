@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DreamHouse</string>
+    <string name="login">Para prosseguir insira o seu \nLogin</string>
 </resources>
