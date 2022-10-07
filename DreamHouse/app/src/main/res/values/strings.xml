@@ -4,4 +4,14 @@
     <string name="txt_error">Ops!!!</string>
     <string name="txt_error_msg">Nossos serviços estão temporariamente fora do ar</string>
     <string name="voltar">Voltar</string>
+    <string name="boas_vindas">Bem Vindo!!!</string>
+    <string name="location_msg">Cadastre sua locação</string>
+    <string name="titulo">Titulo</string>
+    <string name="inicio_disp">Inicio Disponibilidade</string>
+    <string name="fim_disp">Fim da disponibilidade</string>
+    <string name="cidade">Cidade</string>
+    <string name="bairro">Bairro</string>
+    <string name="logradouro">Logradouro</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="passo01">Passo 1 de 4</string>
 </resources>
