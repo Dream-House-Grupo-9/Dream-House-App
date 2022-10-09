@@ -1,11 +1,58 @@
 package com.dreamhouse
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.dreamhouse.Rest.Rest
+import com.dreamhouse.models.Usuario
+import com.dreamhouse.services.UsuarioService
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LoginScreen : AppCompatActivity() {
+    private lateinit var email: String
+    private lateinit var etSenha: EditText
+    private val retrofit = Rest.getInstance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_screen)
+        email = intent.getStringExtra("email").toString()
+        etSenha = findViewById(R.id.Et_email)
+    }
+
+    fun login(view: View) {
+        val senha = etSenha.text.toString()
+        val usuarioRequest = retrofit.create(UsuarioService::class.java)
+        usuarioRequest.login(email, senha).enqueue(
+            object : Callback<Usuario> {
+                override fun onResponse(call: Call<Usuario>, response: Response<Usuario>) {
+                    if (response.isSuccessful) {
+                        val editor = getSharedPreferences(
+                            "USER",
+                            Context.MODE_PRIVATE
+                        ).edit()
+                        editor.putInt("id", response.body()?.idUsuario!!)
+                        editor.apply()
+                        startActivity(Intent(baseContext, LoginScreen::class.java))
+                    } else {
+                        Toast.makeText(baseContext, "Email ou senha incorretos!"
+                            , Toast.LENGTH_LONG).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<Usuario>, t: Throwable) {
+                    Toast.makeText(baseContext, t.message, Toast.LENGTH_LONG).show()
+                }
+            }
+        )
+    }
+    fun voltar(view: View){
+        startActivity(Intent(baseContext, LoginScreen::class.java))
     }
 }
