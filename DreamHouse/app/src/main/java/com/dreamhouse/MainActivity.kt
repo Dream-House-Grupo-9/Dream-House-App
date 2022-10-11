@@ -7,13 +7,10 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.dreamhouse.Rest.Rest
-import com.dreamhouse.models.Cliente
 import com.dreamhouse.models.Usuario
-import com.dreamhouse.services.ClienteService
 import com.dreamhouse.services.UsuarioService
 import retrofit2.Call
 import retrofit2.Response
-import javax.security.auth.callback.Callback
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         etNome = findViewById(R.id.nomeCompletoET)
-        etEmail = findViewById(R.id.Et_email)
+        etEmail = findViewById(R.id.emailET)
 //        etCPF = findViewById(R.id.)
 //        etTelefone = findViewById(R.id.)
 //        etCelular = findViewById(R.id.)
@@ -49,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 //                telefone = etTelefone.text.toString().toInt()
             )
             usuarioRequest.cadastrar(novoUsuario).enqueue(
-                object : Callback<Void> {
+                object : retrofit2.Callback<Void> {
                     override fun onResponse(call: Call<Void>, response: Response<Void>) {
                         if (response.isSuccessful) {
                             Toast.makeText(
@@ -64,11 +61,11 @@ class MainActivity : AppCompatActivity() {
                             ).show()
                         }
                     }
-
                     override fun onFailure(call: Call<Void>, t: Throwable) {
                         Toast.makeText(baseContext, t.message, Toast.LENGTH_LONG).show()
                     }
-                })
+                }
+            )
         }
     }
 
@@ -87,8 +84,8 @@ class MainActivity : AppCompatActivity() {
         } else if (etSenha.text.isNullOrEmpty()) {
             etSenha.error = "Preencha esse campo!"
             return false
-        } else if (etSenha.text.length < 8) {
-            etSenha.error = "A senha precisa conter 8 digitos"
+        } else if (etSenha.text.length < 6) {
+            etSenha.error = "A senha precisa conter 6 digitos"
             return false
         } else if (etEmail.text.isNullOrEmpty()) {
             etEmail.error = "Preencha esse campo!"
@@ -99,10 +96,4 @@ class MainActivity : AppCompatActivity() {
         }
         return true
     }
-
-
-}
-
-private fun <T> Call<T>.enqueue(any: Any) {
-
 }

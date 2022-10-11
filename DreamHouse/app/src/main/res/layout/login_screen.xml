@@ -21,12 +21,6 @@
             android:src="@drawable/img_back"
             />
 
-        <TextView
-            android:layout_width="40dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="5dp"
-            android:text="Voltar" />
-
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -104,6 +98,7 @@
             app:backgroundTint="@color/pink_bakground_app"
             android:fontFamily="arial"
             android:text="Logar"
+            android:onClick="login"
             android:textColor="@color/white"
             android:textFontWeight="900" />
 
