@@ -64,7 +64,7 @@
             android:layout_marginTop="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailET"
+                android:id="@+id/emailCadastroET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_et_base"
@@ -79,7 +79,7 @@
             android:layout_marginTop="20dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/senhaET"
+                android:id="@+id/senhaCadastroET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_et_base"
@@ -94,7 +94,7 @@
             android:layout_marginTop="10dp"
             app:backgroundTint="@color/pink_bakground_app"
             android:fontFamily="arial"
-            android:text="AVANÇAR"
+            android:text="Cadastrar"
             android:onClick="cadastrar"
             android:textColor="@color/white"
             android:textFontWeight="900" />

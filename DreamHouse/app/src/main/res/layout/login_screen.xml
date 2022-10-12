@@ -66,7 +66,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/Et_email"
+                android:id="@+id/emailLoginET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_et_base"
@@ -81,7 +81,7 @@
             android:layout_marginTop="20dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ET_senha"
+                android:id="@+id/senhaLoginET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -97,7 +97,7 @@
             android:layout_marginTop="20dp"
             app:backgroundTint="@color/pink_bakground_app"
             android:fontFamily="arial"
-            android:text="Logar"
+            android:text="Entrar"
             android:onClick="login"
             android:textColor="@color/white"
             android:textFontWeight="900" />

@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         etNome = findViewById(R.id.nomeCompletoET)
-        etEmail = findViewById(R.id.emailET)
-        etSenha = findViewById(R.id.senhaET)
+        etEmail = findViewById(R.id.emailCadastroET)
+        etSenha = findViewById(R.id.senhaCadastroET)
     }
 
     fun cadastrar(view: View) {

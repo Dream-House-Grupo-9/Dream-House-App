@@ -22,8 +22,8 @@ class LoginScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_screen)
-        etEmail = findViewById(R.id.Et_email)
-        etSenha = findViewById(R.id.ET_senha)
+        etEmail = findViewById(R.id.emailLoginET)
+        etSenha = findViewById(R.id.senhaLoginET)
     }
 
     fun login(view: View) {
