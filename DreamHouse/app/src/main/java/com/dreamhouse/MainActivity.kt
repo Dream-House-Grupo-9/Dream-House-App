@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.dreamhouse.Rest.Rest
+import com.dreamhouse.databinding.ActivityMainBinding
 import com.dreamhouse.models.Usuario
 import com.dreamhouse.services.UsuarioService
 import retrofit2.Call
@@ -21,13 +22,22 @@ class MainActivity : AppCompatActivity() {
     private lateinit var etEmail: EditText
     private lateinit var etSenha: EditText
     private val retrofit = Rest.getInstance()
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         etNome = findViewById(R.id.nomeCompletoET)
         etEmail = findViewById(R.id.emailCadastroET)
         etSenha = findViewById(R.id.senhaCadastroET)
+
+        binding.linkLogin.setOnClickListener {
+            redirecionarLogin()
+        }
+
     }
 
     fun cadastrar(view: View) {
@@ -84,4 +94,10 @@ class MainActivity : AppCompatActivity() {
         }
         return true
     }
+
+    private fun redirecionarLogin() {
+        val telaLogin = Intent(this, LoginScreen::class.java)
+        startActivity(telaLogin)
+    }
+
 }
