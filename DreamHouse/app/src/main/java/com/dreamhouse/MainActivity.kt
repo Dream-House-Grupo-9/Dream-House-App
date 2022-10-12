@@ -27,9 +27,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         etNome = findViewById(R.id.nomeCompletoET)
         etEmail = findViewById(R.id.emailET)
-//        etCPF = findViewById(R.id.)
-//        etTelefone = findViewById(R.id.)
-//        etCelular = findViewById(R.id.)
         etSenha = findViewById(R.id.senhaET)
     }
 
@@ -39,11 +36,8 @@ class MainActivity : AppCompatActivity() {
             val novoUsuario = Usuario(
                 idUsuario = null,
                 nome = etNome.text.toString(),
-//                cpf = etCPF.text.toString(),
-//                celular = etCelular.text.toString(),
                 email = etEmail.text.toString(),
                 senha = etSenha.text.toString()
-//                telefone = etTelefone.text.toString().toInt()
             )
             usuarioRequest.cadastrar(novoUsuario).enqueue(
                 object : retrofit2.Callback<Void> {
@@ -61,6 +55,7 @@ class MainActivity : AppCompatActivity() {
                             ).show()
                         }
                     }
+
                     override fun onFailure(call: Call<Void>, t: Throwable) {
                         Toast.makeText(baseContext, t.message, Toast.LENGTH_LONG).show()
                     }
@@ -70,16 +65,9 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
     private fun validarCampos(): Boolean {
         if (etNome.text.isNullOrEmpty()) {
             etNome.error = "Preencha esse campo!"
-            return false
-        } else if (etCPF.text.isNullOrEmpty()) {
-            etCPF.error = "Preencha esse campo!"
-            return false
-        } else if (etCelular.text.isNullOrEmpty()) {
-            etCelular.error = "Preencha esse campo!"
             return false
         } else if (etSenha.text.isNullOrEmpty()) {
             etSenha.error = "Preencha esse campo!"

@@ -39,8 +39,8 @@ class LoginScreen : AppCompatActivity() {
                                 "USER",
                                 Context.MODE_PRIVATE
                             ).edit()
-                            editor.putInt("id", response.body()?.idUsuario!!)
-                            editor.apply()
+//                            editor.putInt("id", response.body()?.idUsuario!!)
+//                            editor.apply()
                             startActivity(Intent(baseContext, LoginScreen::class.java))
                         } else {
                             Toast.makeText(baseContext, "Email ou senha incorretos!"
