@@ -14,11 +14,11 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
+//  private lateinit var etCPF: EditText
+//  private lateinit var etTelefone: EditText
+//  private lateinit var etCelular: EditText
     private lateinit var etNome: EditText
     private lateinit var etEmail: EditText
-    private lateinit var etCPF: EditText
-    private lateinit var etTelefone: EditText
-    private lateinit var etCelular: EditText
     private lateinit var etSenha: EditText
     private val retrofit = Rest.getInstance()
 
