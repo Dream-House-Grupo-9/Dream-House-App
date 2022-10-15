@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.dreamhouse.Rest.Rest
 import com.dreamhouse.databinding.ActivityMainBinding
-import com.dreamhouse.models.Usuario
+import com.dreamhouse.models.UsuarioCastradar
 import com.dreamhouse.services.UsuarioService
 import retrofit2.Call
 import retrofit2.Response
@@ -43,13 +43,12 @@ class MainActivity : AppCompatActivity() {
     fun cadastrar(view: View) {
         val usuarioRequest = retrofit.create(UsuarioService::class.java)
         if (validarCampos()) {
-            val novoUsuario = Usuario(
-                idUsuario = null,
+            val body = UsuarioCastradar(
                 nome = etNome.text.toString(),
                 email = etEmail.text.toString(),
                 senha = etSenha.text.toString()
             )
-            usuarioRequest.cadastrar(novoUsuario).enqueue(
+            usuarioRequest.cadastrar(body).enqueue(
                 object : retrofit2.Callback<Void> {
                     override fun onResponse(call: Call<Void>, response: Response<Void>) {
                         if (response.isSuccessful) {
@@ -99,5 +98,4 @@ class MainActivity : AppCompatActivity() {
         val telaLogin = Intent(this, LoginScreen::class.java)
         startActivity(telaLogin)
     }
-
 }

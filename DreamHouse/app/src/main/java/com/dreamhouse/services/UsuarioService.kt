@@ -1,6 +1,9 @@
 package com.dreamhouse.services
 
+import com.dreamhouse.models.LoginResponse
 import com.dreamhouse.models.Usuario
+import com.dreamhouse.models.UsuarioCastradar
+import com.dreamhouse.models.UsuarioLogin
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -12,12 +15,11 @@ interface UsuarioService {
     @GET("/usuarios/{id_usuario}")
     fun getUsuario(@Path("id_usuario") id_usuario: Int): Call<Usuario>
 
-    @GET("/usuarios/login/{email}/{senha}")
-    fun login(@Path("email") email: String,
-              @Path("senha") senha: String): Call<Usuario>
+    @POST("/clientes/login")
+    fun login(@Body body: UsuarioLogin): Call<LoginResponse>
 
-    @POST("/usuarios")
-    fun cadastrar(@Body novoUsuario: Usuario): Call<Void>
+    @POST("/clientes")
+    fun cadastrar(@Body novoUsuario: UsuarioCastradar): Call<Void>
 
     @GET("/usuarios")
     fun getAllUsuarios(): Call<List<Usuario>>

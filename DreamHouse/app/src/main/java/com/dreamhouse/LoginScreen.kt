@@ -9,7 +9,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.dreamhouse.Rest.Rest
 import com.dreamhouse.databinding.LoginScreenBinding
-import com.dreamhouse.models.Usuario
+import com.dreamhouse.models.LoginResponse
+import com.dreamhouse.models.UsuarioLogin
 import com.dreamhouse.services.UsuarioService
 import retrofit2.Call
 import retrofit2.Callback
@@ -38,12 +39,13 @@ class LoginScreen : AppCompatActivity() {
 
     fun login(view: View) {
         val senha = etSenha.text.toString()
-        var email = etEmail.text.toString()
+        val email = etEmail.text.toString()
+        val body = UsuarioLogin(email, senha)
         val usuarioRequest = retrofit.create(UsuarioService::class.java)
-        with(usuarioRequest) {
-            login(email, senha).enqueue(
-                object : Callback<Usuario> {
-                    override fun onResponse(call: Call<Usuario>, response: Response<Usuario>) {
+
+            usuarioRequest.login(body).enqueue(
+                object: Callback<LoginResponse> {
+                    override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                         if (response.isSuccessful) {
                             val editor = getSharedPreferences(
                                 "USER",
@@ -51,19 +53,19 @@ class LoginScreen : AppCompatActivity() {
                             ).edit()
 //                            editor.putInt("id", response.body()?.idUsuario!!)
 //                            editor.apply()
-                            startActivity(Intent(baseContext, LoginScreen::class.java))
+                            startActivity(Intent(baseContext, SplashScreen::class.java))
                         } else {
                             Toast.makeText(baseContext, "Email ou senha incorretos!"
                                 , Toast.LENGTH_LONG).show()
                         }
                     }
 
-                    override fun onFailure(call: Call<Usuario>, t: Throwable) {
+                    override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                         Toast.makeText(baseContext, t.message, Toast.LENGTH_LONG).show()
                     }
+
                 }
             )
-        }
     }
 
     fun voltar(view: View){
