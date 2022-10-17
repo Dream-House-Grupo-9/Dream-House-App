@@ -5,6 +5,7 @@
     <string name="txt_error_msg">Nossos serviços estão temporariamente fora do ar</string>
     <string name="voltar">Voltar</string>
     <string name="boas_vindas">Bem Vindo!!!</string>
+    <string name="user">User.name</string>
     <string name="location_msg">Cadastre sua locação</string>
     <string name="titulo">Titulo</string>
     <string name="inicio_disp">Inicio Disponibilidade</string>
