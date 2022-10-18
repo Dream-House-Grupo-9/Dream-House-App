@@ -18,9 +18,56 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/mobile_navigation" />
 
-    <ImageView
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/sala"/>
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+           <ImageView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="-45dp"
+               android:src="@drawable/banner"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+<!--        <HorizontalScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            >-->
+
+
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/sala" />-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/apartment" />-->
+
+
+<!--        </HorizontalScrollView>-->
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
