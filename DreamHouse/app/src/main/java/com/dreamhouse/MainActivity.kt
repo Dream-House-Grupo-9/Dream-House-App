@@ -77,7 +77,6 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(baseContext, TermosDeUso::class.java))
     }
 
-
     private fun validarCampos(): Boolean {
         if (etNome.text.isNullOrEmpty()) {
             etNome.error = "Preencha esse campo!"

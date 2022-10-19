@@ -29,6 +29,9 @@
     <string name="edit">Editar Perfil</string>
     <string name="help">Ajuda</string>
     <string name="config">Configurações</string>
+
+    <string name="menu_gallery">Galeria</string>
+    <string name="menu_slideshow">Slide show</string>
     <string name="termos_de_uso">
         "Na Dream House, privacidade e segurança são prioridades e nos comprometemos com a transparência do tratamento de dados pessoais dos nossos usuários/clientes. Por esse motivo, esta presente Política de Privacidade estabelece como é feita a coleta, uso e transferência de informações de clientes ou outras pessoas que acessam ou usam nosso site e aplicativo."
 
