@@ -82,6 +82,7 @@
                 android:id="@+id/senhaCadastroET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textPassword"
                 android:background="@drawable/bg_et_base"
                 android:hint="Senha" />
         </com.google.android.material.textfield.TextInputLayout>

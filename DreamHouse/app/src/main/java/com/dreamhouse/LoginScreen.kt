@@ -53,7 +53,7 @@ class LoginScreen : AppCompatActivity() {
                             ).edit()
 //                            editor.putInt("id", response.body()?.idUsuario!!)
 //                            editor.apply()
-                            startActivity(Intent(baseContext, SplashScreen::class.java))
+                            startActivity(Intent(baseContext, HomeActivity::class.java))
                         } else {
                             Toast.makeText(baseContext, "Email ou senha incorretos!"
                                 , Toast.LENGTH_LONG).show()
