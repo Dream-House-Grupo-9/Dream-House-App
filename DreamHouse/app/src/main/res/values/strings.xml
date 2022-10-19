@@ -29,6 +29,8 @@
     <string name="edit">Editar Perfil</string>
     <string name="help">Ajuda</string>
     <string name="config">Configurações</string>
+    <string name="menu_gallery">Galeria</string>
+    <string name="menu_slideshow">Slide show</string>
 
 
 </resources>

@@ -22,12 +22,6 @@
             android:src="@drawable/img_back"
             />
 
-        <TextView
-            android:layout_width="40dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="5dp"
-            android:text="Voltar" />
-
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -70,7 +64,7 @@
             android:layout_marginTop="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailET"
+                android:id="@+id/emailCadastroET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_et_base"
@@ -85,7 +79,7 @@
             android:layout_marginTop="20dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/senhaET"
+                android:id="@+id/senhaCadastroET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_et_base"
@@ -100,17 +94,35 @@
             android:layout_marginTop="10dp"
             app:backgroundTint="@color/pink_bakground_app"
             android:fontFamily="arial"
-            android:text="AVANÇAR"
+            android:text="Cadastrar"
+            android:onClick="cadastrar"
             android:textColor="@color/white"
             android:textFontWeight="900" />
 
-        <TextView
-            android:id="@+id/txtErrorMessage"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"
-            android:text="Possui cadastro? Faça login"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Possui cadastro?"/>
+
+            <TextView
+                android:id="@+id/linkLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="3dp"
+                android:textColor="@color/pink_bakground_app"
+                android:text="Faça login"/>
+
+        </LinearLayout>
+
+
+
     </LinearLayout>
 
 

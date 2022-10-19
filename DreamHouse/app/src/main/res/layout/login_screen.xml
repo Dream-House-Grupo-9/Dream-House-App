@@ -21,12 +21,6 @@
             android:src="@drawable/img_back"
             />
 
-        <TextView
-            android:layout_width="40dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="5dp"
-            android:text="Voltar" />
-
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -72,7 +66,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/Et_email"
+                android:id="@+id/emailLoginET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_et_base"
@@ -87,7 +81,7 @@
             android:layout_marginTop="20dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ET_senha"
+                android:id="@+id/senhaLoginET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -103,29 +97,35 @@
             android:layout_marginTop="20dp"
             app:backgroundTint="@color/pink_bakground_app"
             android:fontFamily="arial"
-            android:text="Logar"
+            android:text="Entrar"
+            android:onClick="login"
             android:textColor="@color/white"
             android:textFontWeight="900" />
 
-        <TextView
-            android:id="@+id/txt_facaLogin"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"
-            android:textAlignment="center"
-            android:textFontWeight="500"
-            android:text="Esqueceu a senha?"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center">
 
         <TextView
-            android:id="@+id/txt_cadastrese"
-            android:layout_width="200dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_gravity="center"
-            android:textAlignment="center"
             android:textFontWeight="900"
-            android:text="Não possui login? Cadastre-se"/>
+            android:text="Não possui login?"/>
+
+            <TextView
+                android:id="@+id/linkCadastro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="3dp"
+                android:textColor="@color/pink_bakground_app"
+                android:text="Cadastre-se"/>
+
+        </LinearLayout>
+
+
     </LinearLayout>
 
 
