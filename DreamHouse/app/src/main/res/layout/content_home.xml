@@ -31,12 +31,18 @@
 
            <ImageView
                android:layout_width="match_parent"
+
                android:layout_height="1000dp"
                android:layout_marginTop="-95dp"
                android:src="@drawable/home_screen"/>
 
+               android:layout_height="wrap_content"
+               android:layout_marginTop="-45dp"
+               android:src="@drawable/banner"/>
+
         </LinearLayout>
     </ScrollView>
+
 
 <!--    <LinearLayout-->
 <!--        android:layout_width="match_parent"-->
