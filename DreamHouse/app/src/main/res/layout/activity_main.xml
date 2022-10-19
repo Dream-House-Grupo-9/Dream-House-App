@@ -98,6 +98,25 @@
             android:onClick="cadastrar"
             android:textColor="@color/white"
             android:textFontWeight="900" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </CheckBox>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Concordo com os termos de uso da Dream House"
+                android:textColor="@color/pink_bakground_app"
+                android:textSize="16dp"
+                android:onClick="irTermos">
+            </TextView>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

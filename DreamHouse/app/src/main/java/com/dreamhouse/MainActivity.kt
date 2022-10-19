@@ -73,6 +73,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun irTermos(view: View){
+        startActivity(Intent(baseContext, TermosDeUso::class.java))
+    }
+
 
     private fun validarCampos(): Boolean {
         if (etNome.text.isNullOrEmpty()) {

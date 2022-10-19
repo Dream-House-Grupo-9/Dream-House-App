@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="default_bakground_app">#F8F1F1</color>
     <color name="pink_bakground_app">#E240D2</color>
+    <color name="btn_voltar">#E2402379</color>
 </resources>
