@@ -14,7 +14,10 @@
     <string name="bairro">Bairro</string>
     <string name="logradouro">Logradouro</string>
     <string name="cancelar">Cancelar</string>
+    <string name="local_desc">Insira a descrição da sua locação</string>
+    <string name="desc">Descrição</string>
     <string name="passo01">Passo 1 de 4</string>
+    <string name="passo04">Passo 4 de 4</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
