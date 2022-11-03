@@ -7,6 +7,7 @@
     <string name="boas_vindas">Bem Vindo!!!</string>
     <string name="user">User.name</string>
     <string name="location_msg">Cadastre sua locação</string>
+    <string name="side_location">Minhas Locações</string>
     <string name="titulo">Titulo</string>
     <string name="inicio_disp">Inicio Disponibilidade</string>
     <string name="fim_disp">Fim da disponibilidade</string>
