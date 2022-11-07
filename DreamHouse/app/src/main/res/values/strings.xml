@@ -18,15 +18,26 @@
     <string name="local_desc">Insira a descrição da sua locação</string>
     <string name="desc">Descrição</string>
     <string name="passo01">Passo 1 de 4</string>
+    <string name="passo02">Passo 2 de 4</string>
+    <string name="passo03">Passo 3 de 4</string>
     <string name="passo04">Passo 4 de 4</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="details">Detalhes da locação</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
     <string name="edit_profile">Editar Perfil</string>
+    <string name="diaria">Disponibilidade diaria?</string>
+    <string name="semanal">Disponibilidade semanal?</string>
+    <string name="mensal">Disponibilidade mensal?</string>
+    <string name="garagem">Possui garagem?</string>
+    <string name="mobilia">Possui mobilia?</string>
+
 
     <string name="menu_home">Home</string>
     <string name="meus_anuncios">Meus Anuncios</string>
