@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/default_bakground_app">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:orientation="vertical">
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_logo" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Bem vindo !!!"
+            android:textFontWeight="1000"
+            android:textSize="30dp"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+
+    <Button
+
+        android:background="@drawable/custon_btn_tela_inicial"
+        app:backgroundTint="@color/pink_bakground_app"
+        android:layout_gravity="center"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="arial"
+        android:text="Login"
+        android:textSize="19dp"
+        android:textColor="@color/white"
+        android:textFontWeight="1000"
+        android:layout_marginBottom="8dp"
+        android:textAllCaps="false"/>
+
+    <Button
+
+        android:background="@drawable/custon_btn_tela_inicial"
+        app:backgroundTint="@color/pink_bakground_app"
+        android:layout_gravity="center"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="arial"
+        android:text="Cadastre-se"
+        android:textSize="19dp"
+        android:textColor="@color/white"
+        android:textFontWeight="1000"
+        android:textAllCaps="false"/>
+
+</LinearLayout>
