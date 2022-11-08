@@ -32,7 +32,7 @@
             app:backgroundTint="@color/pink_bakground_app"
             android:fontFamily="arial"
             android:text="Cadastrar locação"
-
+            android:onClick="registrationLocation"
             android:textColor="@color/white"
             android:textFontWeight="500" />
 
