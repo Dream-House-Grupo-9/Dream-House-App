@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".CardLocacao">
 
 
@@ -13,26 +14,47 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:layout_marginTop="5dp"
             android:text="@string/side_location"
             android:textAlignment="center"
             android:textFontWeight="300"
             android:textSize="15dp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2"
-            tools:itemCount="4"
-            tools:listitem="@layout/activity_res_card_item">
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_gravity="center"
+            android:layout_width="240dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            app:backgroundTint="@color/pink_bakground_app"
+            android:fontFamily="arial"
+            android:text="Cadastrar locação"
 
-        </androidx.recyclerview.widget.RecyclerView>
+            android:textColor="@color/white"
+            android:textFontWeight="500" />
+
+        <ScrollView
+            android:id="@+id/scrollCards"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:itemCount="6"
+                tools:listitem="@layout/activity_res_card_item">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </ScrollView>
+
 
     </LinearLayout>
 
