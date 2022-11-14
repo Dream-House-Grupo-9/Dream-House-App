@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">DreamHouse</string>
+    <string name="txt_home">Apartamentos proximos a você</string>
+    <string name="txt_ver_mais">Ver Mais</string>
     <string name="login">Para prosseguir insira o seu \nLogin</string>
     <string name="txt_error">Ops!!!</string>
     <string name="txt_error_msg">Nossos serviços estão temporariamente fora do ar</string>
