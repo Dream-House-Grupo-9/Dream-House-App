@@ -99,4 +99,19 @@
         "Qualquer pessoa, doravante denominada "Usuário", deverá aceitar este Termo de uso e todas as demais principios que o regem. O aplicativo funcionará apenas nas plataformas Android e WEB."
     </string>
 
+
+    <!-- Internacionalização -->
+
+    <!-- Cadastro -->
+    <String name="senha_en">Password</String>
+    <String name="nome_en">Full Name</String>
+    <String name="registrar_en">Register</String>
+    <String name="loginmsg_en">To proceed, please login</String>
+
+    <!-- Login -->
+    <String name="login_en">Do you have a register? Log in</String>
+    <String name="esqueceuSenha_en">Forgot Password?</String>
+    <String name="avancar_en">Next</String>
+    <String name="semCadastro_en">doesn't have registration? Register</String>
+
 </resources>
