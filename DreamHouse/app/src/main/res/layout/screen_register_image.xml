@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/default_bakground_app"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:padding="10dp"
+    tools:context=".RegisterImage">
 
     <LinearLayout
         android:layout_width="match_parent"

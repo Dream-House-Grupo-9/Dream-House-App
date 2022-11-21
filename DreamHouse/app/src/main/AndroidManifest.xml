@@ -38,6 +38,9 @@
             android:name=".ErrorScreen"
             android:exported="false" />
         <activity
+            android:name=".RegisterImage"
+            android:exported="false" />
+        <activity
             android:name=".LoginScreen"
             android:exported="true">
             <intent-filter>
