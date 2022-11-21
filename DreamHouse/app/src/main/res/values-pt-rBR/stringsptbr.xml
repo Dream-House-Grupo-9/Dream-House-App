@@ -1,52 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">DreamHouse</string>
-    <string name="login">To proceed enter your \nLogin</string>
+    <string name="login">Para prosseguir insira o seu \nLogin</string>
     <string name="txt_error">Ops!!!</string>
-    <string name="txt_error_msg">Our services are temporarily offline</string>
-    <string name="voltar">Back</string>
-    <string name="boas_vindas">Welcome!!!</string>
+    <string name="txt_error_msg">Nossos serviços estão temporariamente fora do ar</string>
+    <string name="voltar">Voltar</string>
+    <string name="boas_vindas">Bem Vindo!!!</string>
     <string name="user">User.name</string>
-    <string name="location_msg">Register your location</string>
-    <string name="side_location">My locations</string>
-    <string name="titulo">Title</string>
-    <string name="inicio_disp">Home Availability</string>
-    <string name="fim_disp">end of availability</string>
-    <string name="cidade">City</string>
-    <string name="bairro">district</string>
-    <string name="logradouro">public place</string>
-    <string name="cancelar">Cancel</string>
-    <string name="local_desc">Enter your location description</string>
-    <string name="desc">Description</string>
-    <string name="passo01">Step 1 of 4</string>
-    <string name="passo02">Step 2 of 4</string>
-    <string name="passo03">Step 3 of 4</string>
-    <string name="passo04">Step 4 of 4</string>
+    <string name="location_msg">Cadastre sua locação</string>
+    <string name="side_location">Minhas Locações</string>
+    <string name="titulo">Titulo</string>
+    <string name="inicio_disp">Inicio Disponibilidade</string>
+    <string name="fim_disp">Fim da disponibilidade</string>
+    <string name="cidade">Cidade</string>
+    <string name="bairro">Bairro</string>
+    <string name="logradouro">Logradouro</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="local_desc">Insira a descrição da sua locação</string>
+    <string name="desc">Descrição</string>
+    <string name="passo01">Passo 1 de 4</string>
+    <string name="passo02">Passo 2 de 4</string>
+    <string name="passo03">Passo 3 de 4</string>
+    <string name="passo04">Passo 4 de 4</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="details">Ad details</string>
+    <string name="details">Detalhes da locação</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="sim">yes</string>
-    <string name="nao">no</string>
-    <string name="edit_profile">Edit profile</string>
-    <string name="diaria">Daily availability?</string>
-    <string name="semanal">Weekly availability?</string>
-    <string name="mensal">Monthly availability?</string>
-    <string name="garagem">Do you have a garage?</string>
-    <string name="mobilia">Do you have furniture?</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
+    <string name="edit_profile">Editar Perfil</string>
+    <string name="diaria">Disponibilidade diaria?</string>
+    <string name="semanal">Disponibilidade semanal?</string>
+    <string name="mensal">Disponibilidade mensal?</string>
+    <string name="garagem">Possui garagem?</string>
+    <string name="mobilia">Possui mobilia?</string>
 
 
     <string name="menu_home">Home</string>
-    <string name="meus_anuncios">My Ads</string>
-    <string name="favoritos">Favorites</string>
-    <string name="edit">Edit Profile</string>
-    <string name="help">Help</string>
-    <string name="config">Configurations</string>
+    <string name="meus_anuncios">Meus Anuncios</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="edit">Editar Perfil</string>
+    <string name="help">Ajuda</string>
+    <string name="config">Configurações</string>
 
-    <string name="menu_gallery">Galery</string>
+    <string name="menu_gallery">Galeria</string>
     <string name="menu_slideshow">Slide show</string>
     <string name="termos_de_uso">
         "Na Dream House, privacidade e segurança são prioridades e nos comprometemos com a transparência do tratamento de dados pessoais dos nossos usuários/clientes. Por esse motivo, esta presente Política de Privacidade estabelece como é feita a coleta, uso e transferência de informações de clientes ou outras pessoas que acessam ou usam nosso site e aplicativo."
@@ -99,26 +100,29 @@
         "Qualquer pessoa, doravante denominada "Usuário", deverá aceitar este Termo de uso e todas as demais principios que o regem. O aplicativo funcionará apenas nas plataformas Android e WEB."
     </string>
 
-    <string name="termos_uso_login">I agree with the terms of use of Dream House</string>
-    <string name="possui_cadastro2">Do you have a register?</string>
+    <string name="termos_uso_login">Concordo com os termos de uso da Dream House</string>
+    <string name="possui_cadastro2">Possui cadastro?</string>
+
+    <!-- Internacionalização -->
+
 
 
     <!-- Cadastro -->
-    <string name="nome_completo">Full name</string>
+    <string name="nome_completo">Nome Completo</string>
     <string name="email">Email</string>
-    <string name="senha">Password</string>
-    <string name="cadastrar">Register</string>
-    <String name="loginmsg">To proceed, please login</String>
-    <String name="possui_cadastro">Do you have a register?</String>
-    <String name="faca_login">Sign in</String>
+    <string name="senha">Senha</string>
+    <string name="cadastrar">Cadastrar</string>
+    <String name="loginmsg">Para avançar, faça login</String>
+    <String name="possui_cadastro">Possui cadastro?</String>
+    <String name="faca_login">Faça login</String>
     <String name="loginmsg_en">To proceed, please login</String>
 
-    <String name="logmsg">Don't have login?</String>
+    <String name="logmsg">Não possui login?</String>
 
     <!-- Login -->
-    <String name="login_en">Do you have a register? Log in</String>
-    <String name="esqueceuSenha_en">Forgot Password?</String>
-    <String name="avancar_en">Next</String>
-    <String name="semCadastro_en">doesn't have registration? Register</String>
+    <String name="login_en">Possui registro? faça login</String>
+    <String name="esqueceuSenha_en">Esqueceu a senha?</String>
+    <String name="avancar_en">Avançar</String>
+    <String name="semCadastro_en">Não possui registro? Cadastre-se</String>
 
 </resources>
