@@ -54,7 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_et_base"
-                android:hint="Nome Completo" />
+                android:hint="@string/nome_completo" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:background="@drawable/bg_et_base"
-                android:hint="Senha" />
+                android:hint="@string/senha" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -95,7 +95,7 @@
             android:layout_marginTop="10dp"
             app:backgroundTint="@color/pink_bakground_app"
             android:fontFamily="arial"
-            android:text="Cadastrar"
+            android:text="@string/cadastrar"
             android:onClick="cadastrar"
             android:textColor="@color/white"
             android:textFontWeight="900" />
@@ -111,7 +111,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Concordo com os termos de uso da Dream House"
+                android:text="@string/termos_uso_login"
                 android:textColor="@color/pink_bakground_app"
                 android:textSize="16dp"
                 android:onClick="irTermos">
