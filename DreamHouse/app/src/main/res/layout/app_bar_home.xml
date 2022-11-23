@@ -33,7 +33,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="-60dp"
             android:gravity="center"
-            android:text="@string/txt_home" />
+            android:text="Locações" />
 
     </LinearLayout>
 
@@ -71,7 +71,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="670dp"
         android:fontFamily="arial"
-        android:text="@string/txt_ver_mais"
+        android:text="Ver mais"
         android:textColor="@color/white"
         android:textFontWeight="500"
         app:backgroundTint="@color/pink_bakground_app" />

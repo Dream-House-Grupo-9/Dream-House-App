@@ -100,7 +100,7 @@
         "Qualquer pessoa, doravante denominada "Usuário", deverá aceitar este Termo de uso e todas as demais principios que o regem. O aplicativo funcionará apenas nas plataformas Android e WEB."
     </string>
 
-    <string name="cadastre_imagens">Registra imagens</string>
+    <string name="cadastre_imagens">Registrar imagens</string>
     <string name="dica">Dica: Insira pelo menos uma imagem para prosseguir no cadastro  :)</string>
     <string name="termos_uso_login">Concordo com os termos de uso da Dream House</string>
     <string name="possui_cadastro2">Possui cadastro?</string>
@@ -113,17 +113,17 @@
     <string name="email">Email</string>
     <string name="senha">Senha</string>
     <string name="cadastrar">Cadastrar</string>
-    <String name="loginmsg">Para avançar, faça login</String>
-    <String name="possui_cadastro">Possui cadastro?</String>
-    <String name="faca_login">Faça login</String>
-    <String name="loginmsg_en">To proceed, please login</String>
+    <string name="loginmsg">Para avançar, faça login</string>
+    <string name="possui_cadastro">Possui cadastro?</string>
+    <string name="faca_login">Faça login</string>
+    <string name="loginmsg_en">To proceed, please login</string>
 
-    <String name="logmsg">Não possui login?</String>
+    <string name="logmsg">Não possui login?</string>
 
     <!-- Login -->
-    <String name="login_en">Possui registro? faça login</String>
-    <String name="esqueceuSenha_en">Esqueceu a senha?</String>
-    <String name="avancar_en">Avançar</String>
-    <String name="semCadastro_en">Não possui registro? Cadastre-se</String>
+    <string name="login_en">Possui registro? faça login</string>
+    <string name="esqueceuSenha_en">Esqueceu a senha?</string>
+    <string name="avancar_en">Avançar</string>
+    <string name="semCadastro_en">Não possui registro? Cadastre-se</string>
 
 </resources>

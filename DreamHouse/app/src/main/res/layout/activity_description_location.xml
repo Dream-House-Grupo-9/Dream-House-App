@@ -62,7 +62,7 @@
             android:layout_marginTop="10dp"
             app:backgroundTint="@color/pink_bakground_app"
             android:fontFamily="arial"
-            android:text="Proximo Passo"
+            android:text="finalizar cadastro"
             android:textColor="@color/white"
             android:textFontWeight="900" />
 

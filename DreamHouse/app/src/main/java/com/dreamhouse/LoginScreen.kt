@@ -31,7 +31,7 @@ class LoginScreen : AppCompatActivity() {
         etEmail = findViewById(R.id.emailLoginET)
         etSenha = findViewById(R.id.senhaLoginET)
 
-        binding.linkCadastro.setOnClickListener{
+        binding.linkCadastro.setOnClickListener {
             redirecionarCadastro()
         }
 
@@ -43,32 +43,36 @@ class LoginScreen : AppCompatActivity() {
         val body = UsuarioLogin(email, senha)
         val usuarioRequest = retrofit.create(UsuarioService::class.java)
 
-            usuarioRequest.login(body).enqueue(
-                object: Callback<LoginResponse> {
-                    override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-                        if (response.isSuccessful) {
-                            val editor = getSharedPreferences(
-                                "USER",
-                                Context.MODE_PRIVATE
-                            ).edit()
-//                            editor.putInt("id", response.body()?.idUsuario!!)
-//                            editor.apply()
-                            startActivity(Intent(baseContext, HomeActivity::class.java))
-                        } else {
-                            Toast.makeText(baseContext, "Email ou senha incorretos!"
-                                , Toast.LENGTH_LONG).show()
-                        }
+        usuarioRequest.login(body).enqueue(
+            object : Callback<LoginResponse> {
+                override fun onResponse(
+                    call: Call<LoginResponse>,
+                    response: Response<LoginResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val editor = getSharedPreferences(
+                            "USER",
+                            Context.MODE_PRIVATE
+                        ).edit()
+                        editor.putInt("id", response.body()?.idCliente!!)
+                        editor.apply()
+                        startActivity(Intent(baseContext, RegisterLocation::class.java))
+                    } else {
+                        Toast.makeText(
+                            baseContext, "Email ou senha incorretos!", Toast.LENGTH_LONG
+                        ).show()
                     }
-
-                    override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                        Toast.makeText(baseContext, t.message, Toast.LENGTH_LONG).show()
-                    }
-
                 }
-            )
+
+                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                    Toast.makeText(baseContext, t.message, Toast.LENGTH_LONG).show()
+                }
+
+            }
+        )
     }
 
-    fun voltar(view: View){
+    fun voltar(view: View) {
         startActivity(Intent(baseContext, LoginScreen::class.java))
     }
 

@@ -24,13 +24,6 @@
                 android:layout_marginRight="10dp"
                 android:src="@drawable/back_item_anuncio"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="10pt"
-                android:textColor="@color/white"
-                android:text="Voltar"
-            />
         </LinearLayout>
 
     </LinearLayout>

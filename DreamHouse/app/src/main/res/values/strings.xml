@@ -101,7 +101,7 @@
 r pessoa, doravante denominada "Usuário", deverá aceitar este Termo de uso e todas as demais principios que o regem. O aplicativo funcionará apenas nas plataformas Android e WEB."
     </string>
 
-    <string name="desc_anuncio">
+    <string name="desc_anuncio" translatable="false">
 "        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 "    </string>
 
@@ -116,17 +116,20 @@ r pessoa, doravante denominada "Usuário", deverá aceitar este Termo de uso e t
     <string name="email">Email</string>
     <string name="senha">Password</string>
     <string name="cadastrar">Register</string>
-    <String name="loginmsg">To proceed, please login</String>
-    <String name="possui_cadastro">Do you have a register?</String>
-    <String name="faca_login">Sign in</String>
-    <String name="loginmsg_en">To proceed, please login</String>
+    <string name="loginmsg" translatable="false">To proceed, please login</string>
+    <string name="possui_cadastro" translatable="false">Do you have a register?</string>
+    <string name="faca_login" translatable="false">Sign in</string>
+    <string name="loginmsg_en" translatable="false">To proceed, please login</string>
 
-    <String name="logmsg">Don't have login?</String>
+    <string name="logmsg" translatable="false">Don\'t have login?</string>
 
     <!-- Login -->
-    <String name="login_en">Do you have a register? Log in</String>
-    <String name="esqueceuSenha_en">Forgot Password?</String>
-    <String name="avancar_en">Next</String>
-    <String name="semCadastro_en">doesn't have registration? Register</String>
+    <string name="login_en" translatable="false">Do you have a register? Log in</string>
+    <string name="esqueceuSenha_en" translatable="false">Forgot Password?</string>
+    <string name="avancar_en" translatable="false">Next</string>
+    <string name="semCadastro_en" translatable="false">doesn\'t have registration? Register</string>
+
+    <string name="txt_home" translatable="false">Locações</string>
+
 
 </resources>
