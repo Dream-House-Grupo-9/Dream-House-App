@@ -7,10 +7,10 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.dreamhouse.rest.Rest
 import com.dreamhouse.databinding.LoginScreenBinding
 import com.dreamhouse.models.LoginResponse
 import com.dreamhouse.models.UsuarioLogin
+import com.dreamhouse.rest.Rest
 import com.dreamhouse.services.UsuarioService
 import retrofit2.Call
 import retrofit2.Callback
@@ -73,7 +73,7 @@ class LoginScreen : AppCompatActivity() {
     }
 
     fun voltar(view: View) {
-        startActivity(Intent(baseContext, LoginScreen::class.java))
+        startActivity(Intent(baseContext, MainActivity::class.java))
     }
 
     private fun redirecionarCadastro() {

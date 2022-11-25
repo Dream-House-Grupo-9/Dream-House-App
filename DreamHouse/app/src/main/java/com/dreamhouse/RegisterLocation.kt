@@ -1,16 +1,18 @@
 package com.dreamhouse
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import com.dreamhouse.rest.Rest
 import com.dreamhouse.databinding.ActivityRegisterLocationBinding
 import com.dreamhouse.models.ClientId
 import com.dreamhouse.models.Locacao
 import com.dreamhouse.models.idDetalhesAnuncio
+import com.dreamhouse.rest.Rest
 import com.dreamhouse.services.LocacaoService
 import retrofit2.Call
 import retrofit2.Callback
@@ -130,5 +132,9 @@ class RegisterLocation : AppCompatActivity() {
             binding.EtDescricao.text.toString(),
             ClientId(getSharedPreferences("USER", MODE_PRIVATE).getInt("id", 0))
         )
+    }
+
+    fun voltar(view: View){
+        startActivity(Intent(baseContext, HomeActivity::class.java))
     }
 }
