@@ -2,6 +2,7 @@ package com.dreamhouse
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.dreamhouse.databinding.ActivityMainBinding
 
@@ -14,7 +15,7 @@ class CardLocacao : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    fun registrationLocation() {
+    fun registrationLocation(view: View) {
         val screenLocation = Intent(
             this,
             RegisterLocation::class.java
