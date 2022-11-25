@@ -5,13 +5,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 
-class LocationDetail : AppCompatActivity() {
+class Anuncio : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_location_detail)
+        setContentView(R.layout.activity_anuncio)
     }
 
     fun voltar(view: View){
-        startActivity(Intent(baseContext, RegisterLocation::class.java))
+        startActivity(Intent(baseContext, HomeActivity::class.java))
     }
 }

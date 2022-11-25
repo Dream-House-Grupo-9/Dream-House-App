@@ -20,8 +20,10 @@ class CardLocacao : AppCompatActivity() {
             this,
             RegisterLocation::class.java
         )
-
         startActivity(screenLocation)
     }
 
+    fun voltar(view: View){
+        startActivity(Intent(baseContext, HomeActivity::class.java))
+    }
 }
