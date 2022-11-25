@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.dreamhouse.Rest.Rest
+import com.dreamhouse.rest.Rest
 import com.dreamhouse.databinding.ActivityMainBinding
 import com.dreamhouse.models.UsuarioCastradar
 import com.dreamhouse.services.UsuarioService

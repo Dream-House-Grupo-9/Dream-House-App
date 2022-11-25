@@ -6,7 +6,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import com.dreamhouse.Rest.Rest
+import com.dreamhouse.rest.Rest
 import com.dreamhouse.databinding.ActivityRegisterLocationBinding
 import com.dreamhouse.models.ClientId
 import com.dreamhouse.models.Locacao

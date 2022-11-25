@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.dreamhouse.Rest.Rest
+import com.dreamhouse.rest.Rest
 import com.dreamhouse.databinding.LoginScreenBinding
 import com.dreamhouse.models.LoginResponse
 import com.dreamhouse.models.UsuarioLogin
