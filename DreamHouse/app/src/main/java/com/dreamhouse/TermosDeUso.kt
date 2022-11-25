@@ -11,7 +11,6 @@ class TermosDeUso: AppCompatActivity() {
         setContentView(R.layout.activity_termos_de_uso)
     }
 
-
     fun voltar(view: View){
         startActivity(Intent(baseContext, MainActivity::class.java))
     }

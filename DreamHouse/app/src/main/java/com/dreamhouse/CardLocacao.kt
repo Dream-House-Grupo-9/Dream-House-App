@@ -2,6 +2,7 @@ package com.dreamhouse
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.dreamhouse.databinding.ActivityMainBinding
 
@@ -19,8 +20,10 @@ class CardLocacao : AppCompatActivity() {
             this,
             RegisterLocation::class.java
         )
-
         startActivity(screenLocation)
     }
 
+    fun voltar(view: View){
+        startActivity(Intent(baseContext, HomeActivity::class.java))
+    }
 }
