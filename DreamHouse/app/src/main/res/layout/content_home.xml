@@ -36,9 +36,9 @@
                android:layout_marginTop="-95dp"
                android:src="@drawable/home_screen"/>
 
-               android:layout_height="wrap_content"
-               android:layout_marginTop="-45dp"
-               android:src="@drawable/banner"/>
+<!--               android:layout_height="wrap_content"-->
+<!--               android:layout_marginTop="-45dp"-->
+<!--               android:src="@drawable/banner"/>-->
 
         </LinearLayout>
     </ScrollView>
