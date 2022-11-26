@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textFontWeight="600"
-            android:text="Disponibilidade Diaria?" />
+            android:text="@string/diaria" />
         
         <LinearLayout
             android:layout_width="match_parent"
@@ -220,6 +220,37 @@
             </RadioGroup>
         </LinearLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textFontWeight="600"
+            android:text="@string/mobilia" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="5dp">
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/radio_area_trabalho_s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sim" />
+                <RadioButton
+                    android:id="@+id/radio_area_trabalho_n"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nao"
+                    />
+            </RadioGroup>
+        </LinearLayout>
+
         <Button
             android:id="@+id/btnAvancar"
             android:layout_gravity="center"
@@ -253,6 +284,8 @@
             android:textFontWeight="900"
             android:textSize="15dp"
             android:text="@string/passo02"/>
+
+
     </LinearLayout>
 
 </LinearLayout>

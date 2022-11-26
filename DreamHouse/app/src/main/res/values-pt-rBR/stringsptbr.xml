@@ -126,4 +126,11 @@
     <string name="avancar_en">Avançar</string>
     <string name="semCadastro_en">Não possui registro? Cadastre-se</string>
 
+    <string name="final_cadastro">Finalizar cadastro</string>
+    <string name="area_trabalho">Possui area de trabalho?</string>
+    <string name="number">Numero</string>
+    <string name="dormitorios">Quantidade dormitorios</string>
+    <string name="toaletes">Quantidade banheiros</string>
+    <string name="categoria">Insira a categoria</string>
+
 </resources>
