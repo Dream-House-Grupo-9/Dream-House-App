@@ -131,5 +131,18 @@ r pessoa, doravante denominada "Usuário", deverá aceitar este Termo de uso e t
 
     <string name="txt_home" translatable="false">Locações</string>
 
+    <string name="final_cadastro" translatable="false">Finalize register</string>
+    <string name="area_trabalho" translatable="false">Do you have a work area?</string>
+    <string name="number" translatable="false">Number</string>
+    <string name="dormitorios" translatable="false">number of bedrooms</string>
+    <string name="toaletes" translatable="false">number of bathrooms</string>
+    <string name="categoria" translatable="false">insert the category</string>
+    <string name="telefone" translatable="false">Telephone</string>
+    <string name="anuncio" translatable="false">Premium Ad?</string>
+    <string name="val_mensal" translatable="false">Monthly Value</string>
+    <string name="val_diario" translatable="false">Daily Value</string>
+    <string name="val_semanal" translatable="false">Weekly Value</string>
+
+
 
 </resources>
