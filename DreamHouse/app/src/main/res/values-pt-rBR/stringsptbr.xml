@@ -132,5 +132,10 @@
     <string name="dormitorios">Quantidade dormitorios</string>
     <string name="toaletes">Quantidade banheiros</string>
     <string name="categoria">Insira a categoria</string>
+    <string name="telefone">Telefone</string>
+    <string name="anuncio">Anuncio Premium?</string>
+    <string name="val_mensal">Valor mensal</string>
+    <string name="val_diario">Valor diario</string>
+    <string name="val_semanal">Valor semanal</string>
 
 </resources>
