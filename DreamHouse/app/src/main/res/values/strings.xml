@@ -142,6 +142,7 @@ r pessoa, doravante denominada "Usuário", deverá aceitar este Termo de uso e t
     <string name="val_mensal" translatable="false">Monthly Value</string>
     <string name="val_diario" translatable="false">Daily Value</string>
     <string name="val_semanal" translatable="false">Weekly Value</string>
+    <string name="logout" translatable="false">Logout</string>
 
 
 
