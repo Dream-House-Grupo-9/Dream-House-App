@@ -9,5 +9,6 @@ data class Locacao(
     val logradouro: String,
     val detalhe: idDetalhesAnuncio,
     val descricao: String,
+    val image: String,
     val cliente: ClientId
 )

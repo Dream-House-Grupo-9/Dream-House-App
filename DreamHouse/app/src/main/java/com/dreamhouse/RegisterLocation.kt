@@ -1,11 +1,15 @@
 package com.dreamhouse
 
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.dreamhouse.databinding.ActivityRegisterLocationBinding
@@ -23,6 +27,9 @@ class RegisterLocation : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterLocationBinding
     private val request = Rest.getInstance().create(LocacaoService::class.java)
 
+    private val listImage = arrayOf("","","")
+
+
     private val uris = mutableListOf<Uri?>(
         null,
         null,
@@ -31,8 +38,11 @@ class RegisterLocation : AppCompatActivity() {
     )
 
     private var uriSelected: Uri? = null
+    private var stringListImage = ""
 
     private var imageSelected: ImageView? = null
+    private val imgurService = ImgurApiService()
+
 
     private val actForResult = registerForActivityResult(
         ActivityResultContracts.GetContent()
@@ -51,34 +61,87 @@ class RegisterLocation : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterLocationBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.image1.setOnClickListener {
-            actForResult.launch("image/*")
-            imageSelected = binding.image1
+        setupListeners()
+    }
+
+    private fun setupImageUpload(image: ImageView) {
+        val launcher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result: ActivityResult ->
+            if (result.resultCode == RESULT_OK
+                && result.data != null
+            ) {
+                val photoUri = result.data!!.data
+                image.setImageURI(photoUri)
+                val imageStream = contentResolver.openInputStream(photoUri!!)
+                val selectedImage = BitmapFactory.decodeStream(imageStream)
+                when(image.id) {
+                    binding.image1.id -> postImageImgur(selectedImage, 0)
+                    binding.image2.id -> postImageImgur(selectedImage, 1)
+                    binding.image3.id -> postImageImgur(selectedImage, 2)
+                    binding.image4.id -> postImageImgur(selectedImage, 3)
+
+                }
+                imageStream?.close()
+//                imageStream?.closeQuietly()
+            }
         }
-        binding.image2.setOnClickListener {
-            actForResult.launch("image/*")
-            imageSelected = binding.image2
+
+        image.setOnClickListener { view ->
+            val intent =
+                Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            launcher.launch(intent)
         }
-        binding.image3.setOnClickListener {
-            actForResult.launch("image/*")
-            imageSelected = binding.image3
-        }
-        binding.image4.setOnClickListener {
-            actForResult.launch("image/*")
-            imageSelected = binding.image4
-        }
+    }
+
+    private fun setupListeners() {
+
+//        binding.image1.setOnClickListener {
+//            actForResult.launch("image/*")
+//            imageSelected = binding.image1
+//        }
+//        binding.image2.setOnClickListener {
+//            actForResult.launch("image/*")
+//            imageSelected = binding.image2
+//        }
+//        binding.image3.setOnClickListener {
+//            actForResult.launch("image/*")
+//            imageSelected = binding.image3
+//        }
+//        binding.image4.setOnClickListener {
+//            actForResult.launch("image/*")
+//            imageSelected = binding.image4
+//        }
+
+        setupImageUpload(binding.image1)
+        setupImageUpload(binding.image2)
+        setupImageUpload(binding.image3)
+        setupImageUpload(binding.image4)
+
         binding.btnAvancar.setOnClickListener {
+
+            listImage.forEachIndexed { index, item ->
+                if (item.isNotBlank()) {
+                    if (index != listImage.size - 1) {
+                        stringListImage += "$item,"
+                    } else {
+                        stringListImage += item
+                    }
+                }
+            }
+
             createLocacao()
         }
     }
 
     private fun createLocacao() {
         val locacao = buildLocacao()
-        val imagens = buildImagens()
-        val listaBytes = mutableListOf<ByteArray>()
-        imagens.forEach { file ->
-            listaBytes.add(file.inputStream().readBytes())
-        }
+//        val imagens = buildImagens()
+//        val listaBytes = mutableListOf<ByteArray>()
+//        imagens.forEach { file ->
+//            listaBytes.add(file.inputStream().readBytes())
+//        }
+
         request.createLocacao(locacao).enqueue(object : Callback<Any> {
             override fun onResponse(call: Call<Any>, response: Response<Any>) {
                 Toast.makeText(baseContext, "Criou locacao", Toast.LENGTH_SHORT).show()
@@ -96,6 +159,7 @@ class RegisterLocation : AppCompatActivity() {
         uris.forEach { uri ->
             files.add(File(uri.toString()))
         }
+
         return files
     }
 
@@ -130,8 +194,17 @@ class RegisterLocation : AppCompatActivity() {
                 },
             ),
             binding.EtDescricao.text.toString(),
+            stringListImage,
             ClientId(getSharedPreferences("USER", MODE_PRIVATE).getInt("id", 0))
         )
+    }
+
+    private fun postImageImgur(image: Bitmap, index: Int){
+        imgurService.uploadImageToImgur(image, index, this)
+    }
+
+    fun addImages(newImage: String, index: Int) {
+        listImage[index] = newImage
     }
 
     fun voltar(view: View){
