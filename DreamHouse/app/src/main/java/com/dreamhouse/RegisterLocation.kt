@@ -15,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.dreamhouse.databinding.ActivityRegisterLocationBinding
 import com.dreamhouse.models.ClientId
 import com.dreamhouse.models.Locacao
-import com.dreamhouse.models.idDetalhesAnuncio
 import com.dreamhouse.rest.Rest
 import com.dreamhouse.services.LocacaoService
 import retrofit2.Call
@@ -27,7 +26,7 @@ class RegisterLocation : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterLocationBinding
     private val request = Rest.getInstance().create(LocacaoService::class.java)
 
-    private val listImage = arrayOf("","","")
+    private val listImage = arrayOf("", "", "")
 
 
     private val uris = mutableListOf<Uri?>(
@@ -75,7 +74,7 @@ class RegisterLocation : AppCompatActivity() {
                 image.setImageURI(photoUri)
                 val imageStream = contentResolver.openInputStream(photoUri!!)
                 val selectedImage = BitmapFactory.decodeStream(imageStream)
-                when(image.id) {
+                when (image.id) {
                     binding.image1.id -> postImageImgur(selectedImage, 0)
                     binding.image2.id -> postImageImgur(selectedImage, 1)
                     binding.image3.id -> postImageImgur(selectedImage, 2)
@@ -95,23 +94,6 @@ class RegisterLocation : AppCompatActivity() {
     }
 
     private fun setupListeners() {
-
-//        binding.image1.setOnClickListener {
-//            actForResult.launch("image/*")
-//            imageSelected = binding.image1
-//        }
-//        binding.image2.setOnClickListener {
-//            actForResult.launch("image/*")
-//            imageSelected = binding.image2
-//        }
-//        binding.image3.setOnClickListener {
-//            actForResult.launch("image/*")
-//            imageSelected = binding.image3
-//        }
-//        binding.image4.setOnClickListener {
-//            actForResult.launch("image/*")
-//            imageSelected = binding.image4
-//        }
 
         setupImageUpload(binding.image1)
         setupImageUpload(binding.image2)
@@ -136,17 +118,11 @@ class RegisterLocation : AppCompatActivity() {
 
     private fun createLocacao() {
         val locacao = buildLocacao()
-//        val imagens = buildImagens()
-//        val listaBytes = mutableListOf<ByteArray>()
-//        imagens.forEach { file ->
-//            listaBytes.add(file.inputStream().readBytes())
-//        }
 
         request.createLocacao(locacao).enqueue(object : Callback<Any> {
             override fun onResponse(call: Call<Any>, response: Response<Any>) {
                 Toast.makeText(baseContext, "Criou locacao", Toast.LENGTH_SHORT).show()
             }
-
             override fun onFailure(call: Call<Any>, t: Throwable) {
                 Toast.makeText(baseContext, t.message, Toast.LENGTH_SHORT).show()
             }
@@ -159,47 +135,22 @@ class RegisterLocation : AppCompatActivity() {
         uris.forEach { uri ->
             files.add(File(uri.toString()))
         }
-
         return files
     }
 
     private fun buildLocacao(): Locacao {
         return Locacao(
             binding.EtTitulo.text.toString(),
-            binding.ETInicioDisp.text.toString(),
-            binding.ETFimDisp.text.toString(),
             binding.ETBairro.text.toString(),
             binding.ETCidade.text.toString(),
             binding.ETLogradouro.text.toString(),
-            idDetalhesAnuncio(
-                when (binding.radioGroupDiaria.checkedRadioButtonId) {
-                    R.id.radio_diaria_s -> true
-                    else -> false
-                },
-                when (binding.radioGroupSemanal.checkedRadioButtonId) {
-                    R.id.radio_diaria_s -> true
-                    else -> false
-                },
-                when (binding.radioGroupMensal.checkedRadioButtonId) {
-                    R.id.radio_diaria_s -> true
-                    else -> false
-                },
-                when (binding.radioGroupGaragem.checkedRadioButtonId) {
-                    R.id.radio_diaria_s -> true
-                    else -> false
-                },
-                when (binding.radioGroupMobilia.checkedRadioButtonId) {
-                    R.id.radio_diaria_s -> true
-                    else -> false
-                },
-            ),
             binding.EtDescricao.text.toString(),
             stringListImage,
             ClientId(getSharedPreferences("USER", MODE_PRIVATE).getInt("id", 0))
         )
     }
 
-    private fun postImageImgur(image: Bitmap, index: Int){
+    private fun postImageImgur(image: Bitmap, index: Int) {
         imgurService.uploadImageToImgur(image, index, this)
     }
 
@@ -207,7 +158,7 @@ class RegisterLocation : AppCompatActivity() {
         listImage[index] = newImage
     }
 
-    fun voltar(view: View){
+    fun voltar(view: View) {
         startActivity(Intent(baseContext, HomeActivity::class.java))
     }
 }
