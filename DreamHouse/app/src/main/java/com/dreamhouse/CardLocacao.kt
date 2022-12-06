@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.dreamhouse.databinding.ActivityMainBinding
+import com.dreamhouse.databinding.ActivityCardLocacaoBinding
 import com.dreamhouse.models.LocacaoListCard
 import com.dreamhouse.network.ImovelApiService
 import com.dreamhouse.rest.Rest
@@ -14,7 +14,7 @@ import com.dreamhouse.rest.Rest
 class CardLocacao : AppCompatActivity() {
 
     private val retrofit = Rest.getInstance()
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityCardLocacaoBinding
     private lateinit var recyclerView: RecyclerView
     val listLocacao = mutableListOf<LocacaoListCard>()
     private lateinit var etCidade: TextView
@@ -24,7 +24,8 @@ class CardLocacao : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_card_locacao)
+        binding = ActivityCardLocacaoBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         initVariables()
         initUI()
