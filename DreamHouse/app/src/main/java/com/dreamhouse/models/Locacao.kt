@@ -2,7 +2,7 @@ package com.dreamhouse.models
 
 data class Locacao(
     val titulo: String,
-    val telefone: Int,
+    val telefone: String,
     val categoria: String,
     val cidade: String,
     val bairro: String,
