@@ -30,7 +30,7 @@ class ImgurApiService {
 
                 val httpsURLConnection =
                     withContext(Dispatchers.IO) { url.openConnection() as HttpsURLConnection }
-                httpsURLConnection.setRequestProperty("Authorization", "Client-ID cd464e904223611")
+                httpsURLConnection.setRequestProperty("Authorization", "Client-ID d9cf20470612c34")
                 httpsURLConnection.setRequestProperty(
                     "Content-Type",
                     "multipart/form-data; boundary=$boundary"

@@ -49,6 +49,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".CardLocacao"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreen"
             android:exported="false" />
         <activity

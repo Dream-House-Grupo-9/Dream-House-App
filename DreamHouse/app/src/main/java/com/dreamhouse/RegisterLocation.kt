@@ -3,7 +3,6 @@ package com.dreamhouse
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
@@ -20,41 +19,40 @@ import com.dreamhouse.services.LocacaoService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.io.File
 
 class RegisterLocation : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterLocationBinding
     private val request = Rest.getInstance().create(LocacaoService::class.java)
 
-    private val listImage = arrayOf("", "", "")
+    private val listImage = arrayOf("", "", "", "")
 
 
-    private val uris = mutableListOf<Uri?>(
-        null,
-        null,
-        null,
-        null
-    )
+//    private val uris = mutableListOf<Uri?>(
+//        null,
+//        null,
+//        null,
+//        null
+//    )
 
-    private var uriSelected: Uri? = null
+//    private var uriSelected: Uri? = null
     private var stringListImage = ""
 
-    private var imageSelected: ImageView? = null
+//    private var imageSelected: ImageView? = null
     private val imgurService = ImgurApiService()
 
-
-    private val actForResult = registerForActivityResult(
-        ActivityResultContracts.GetContent()
-    ) {
-        uriSelected = it
-        imageSelected?.setImageURI(uriSelected)
-        when (imageSelected?.id) {
-            R.id.image1 -> uris.add(0, uriSelected)
-            R.id.image2 -> uris.add(1, uriSelected)
-            R.id.image3 -> uris.add(2, uriSelected)
-            R.id.image4 -> uris.add(3, uriSelected)
-        }
-    }
+//
+//    private val actForResult = registerForActivityResult(
+//        ActivityResultContracts.GetContent()
+//    ) {
+//        uriSelected = it
+//        imageSelected?.setImageURI(uriSelected)
+//        when (imageSelected?.id) {
+//            R.id.image1 -> uris.add(0, uriSelected)
+//            R.id.image2 -> uris.add(1, uriSelected)
+//            R.id.image3 -> uris.add(2, uriSelected)
+//            R.id.image4 -> uris.add(3, uriSelected)
+//        }
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -111,7 +109,6 @@ class RegisterLocation : AppCompatActivity() {
                     }
                 }
             }
-
             createLocacao()
         }
     }
@@ -121,7 +118,11 @@ class RegisterLocation : AppCompatActivity() {
 
         request.createLocacao(locacao).enqueue(object : Callback<Any> {
             override fun onResponse(call: Call<Any>, response: Response<Any>) {
-                Toast.makeText(baseContext, "Criou locacao", Toast.LENGTH_SHORT).show()
+                if (response.isSuccessful) {
+                    Toast.makeText(baseContext, "Criou locacao", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(baseContext, CardLocacao::class.java))
+
+                }
             }
             override fun onFailure(call: Call<Any>, t: Throwable) {
                 Toast.makeText(baseContext, t.message, Toast.LENGTH_SHORT).show()
@@ -130,21 +131,25 @@ class RegisterLocation : AppCompatActivity() {
         })
     }
 
-    private fun buildImagens(): List<File> {
-        val files = mutableListOf<File>()
-        uris.forEach { uri ->
-            files.add(File(uri.toString()))
-        }
-        return files
-    }
+//    private fun buildImagens(): List<File> {
+//        val files = mutableListOf<File>()
+//        uris.forEach { uri ->
+//            files.add(File(uri.toString()))
+//        }
+//        return files
+//    }
 
     private fun buildLocacao(): Locacao {
         return Locacao(
             binding.EtTitulo.text.toString(),
+            binding.EtTelefone.text.toString(),
+            binding.ETCategoria.text.toString(),
             binding.ETBairro.text.toString(),
             binding.ETCidade.text.toString(),
             binding.ETLogradouro.text.toString(),
+            binding.ETNumero.text.toString().toInt(),
             binding.EtDescricao.text.toString(),
+            binding.ETValDiario.text.toString().toDouble(),
             stringListImage,
             ClientId(getSharedPreferences("USER", MODE_PRIVATE).getInt("id", 0))
         )
