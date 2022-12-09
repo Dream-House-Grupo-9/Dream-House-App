@@ -100,7 +100,7 @@
             app:backgroundTint="@color/pink_bakground_app"
             android:fontFamily="arial"
             android:text="Salvar"
-
+            android:onClick="salvar"
             android:textColor="@color/white"
             android:textFontWeight="900" />
     </LinearLayout>
