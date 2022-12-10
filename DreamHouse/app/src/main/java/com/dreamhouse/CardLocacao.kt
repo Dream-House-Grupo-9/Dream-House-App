@@ -13,12 +13,8 @@ import com.dreamhouse.rest.Rest
 
 class CardLocacao : AppCompatActivity() {
 
-    private val retrofit = Rest.getInstance()
     private lateinit var binding: ActivityCardLocacaoBinding
     private lateinit var recyclerView: RecyclerView
-    val listLocacao = mutableListOf<LocacaoListCard>()
-    private lateinit var etCidade: TextView
-    private lateinit var etBairro: TextView
     private val imovelService = ImovelApiService()
 
 
@@ -33,8 +29,6 @@ class CardLocacao : AppCompatActivity() {
 
     private fun initVariables() {
         recyclerView = findViewById(R.id.recyclerContainer)
-        etCidade = findViewById(R.id.id_txt_cidade)
-        etBairro = findViewById(R.id.id_txt_bairro)
     }
 
     private fun initUI() {
@@ -42,7 +36,7 @@ class CardLocacao : AppCompatActivity() {
     }
 
     private fun setDataToRecyclerView() {
-        imovelService.getCardAnimaisAdotante(
+        imovelService.getCardImoveis(
             context = this,
             intent = Intent(this, Anuncio::class.java),
             recyclerView = recyclerView

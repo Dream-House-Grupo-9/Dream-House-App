@@ -17,7 +17,7 @@ class ImovelApiService {
     private val retrofit = Rest.getInstance()
     private val imovelApiConnection = retrofit.create(LocacaoService::class.java)
 
-    fun getCardAnimaisAdotante(
+    fun getCardImoveis(
         context: Context,
         intent: Intent,
         recyclerView: RecyclerView
@@ -47,4 +47,36 @@ class ImovelApiService {
 
         })
     }
+
+    fun getFourCardImoveis(
+        context: Context,
+        intent: Intent,
+        recyclerView: RecyclerView
+    ) {
+
+        val getFourAnuncios = imovelApiConnection.getFourLocations()
+
+        getFourAnuncios.enqueue(object : Callback<List<LocacaoListCard>> {
+            override fun onResponse(
+                call: Call<List<LocacaoListCard>>,
+                response: Response<List<LocacaoListCard>>
+            ) {
+                if (response.isSuccessful) {
+                    response.body()?.let { listaImovel ->
+                        recyclerView.adapter =
+                            ImovelGridAdapter(context = context, listaImovel) { imovel ->
+                                context.startActivity(intent)
+                                (context as Activity).finish()
+                            }
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<List<LocacaoListCard>>, t: Throwable) {
+                Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
+            }
+
+        })
+    }
+
 }

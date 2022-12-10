@@ -15,4 +15,7 @@ interface LocacaoService {
     @GET("/anuncios")
     fun getLocacao(): Call<List<LocacaoListCard>>
 
+    @GET("/anuncios/get-four-house")
+    fun getFourLocations(): Call<List<LocacaoListCard>>
+
 }
