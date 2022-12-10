@@ -18,4 +18,17 @@
         tools:layout="@layout/activity_edit_profile" />
 
 
+    <fragment
+        android:id="@+id/nav_exit"
+        android:name="com.dreamhouse.ui.LoginScreen_fragment"
+        android:label="Exit"
+        tools:layout="@layout/login_screen" />
+
+
+    <fragment
+        android:id="@+id/nav_card_location"
+        android:name="com.dreamhouse.ui.CardLocacao_fragment"
+        android:label="@string/meus_anuncios"
+        tools:layout="@layout/activity_card_locacao" />
+
 </navigation>

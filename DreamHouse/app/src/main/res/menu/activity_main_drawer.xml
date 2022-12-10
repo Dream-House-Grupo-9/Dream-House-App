@@ -13,25 +13,25 @@
             android:icon="@drawable/plus"
             android:title="@string/meus_anuncios" />
 
-        <item
+        <!--item
             android:id="@+id/nav_fav"
             android:icon="@drawable/star"
-            android:title="@string/favoritos" />
+            android:title="@string/favoritos" /-->
 
         <item
             android:id="@+id/nav_edit"
             android:icon="@drawable/edit"
             android:title="@string/edit" />
 
-        <item
+        <!--item
             android:id="@+id/nav_help"
             android:icon="@drawable/help"
-            android:title="@string/help" />
+            android:title="@string/help" /-->
 
-        <item
+        <!--item
             android:id="@+id/nav_config"
             android:icon="@drawable/config"
-            android:title="@string/config" />
+            android:title="@string/config" /-->
 
         <item
             android:id="@+id/nav_exit"
