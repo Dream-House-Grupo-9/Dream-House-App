@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.dreamhouse.databinding.ActivityCardLocacaoBinding
+import com.dreamhouse.models.Locacao
 import com.dreamhouse.models.LocacaoListCard
 import com.dreamhouse.network.ImovelApiService
 import com.dreamhouse.rest.Rest
@@ -16,7 +17,7 @@ class CardLocacao : AppCompatActivity() {
     private lateinit var binding: ActivityCardLocacaoBinding
     private lateinit var recyclerView: RecyclerView
     private val imovelService = ImovelApiService()
-
+    //puxar nome do locador
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

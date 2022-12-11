@@ -6,6 +6,7 @@ import android.content.Intent
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.dreamhouse.adapters.ImovelGridAdapter
+import com.dreamhouse.models.Locacao
 import com.dreamhouse.models.LocacaoListCard
 import com.dreamhouse.rest.Rest
 import com.dreamhouse.services.LocacaoService
@@ -73,6 +74,33 @@ class ImovelApiService {
             }
 
             override fun onFailure(call: Call<List<LocacaoListCard>>, t: Throwable) {
+                Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
+            }
+
+        })
+    }
+
+    fun getDetalhesAnuncio(
+        idImovel: String,
+        context: Context,
+        fillAnuncioInfo: (LocacaoListCard) -> Unit
+    ) {
+        val getAnimaisNaoAdotados = imovelApiConnection.getDetailsLocations(idImovel = idImovel)
+
+        getAnimaisNaoAdotados.enqueue(object : Callback<LocacaoListCard> {
+            override fun onResponse(
+                call: Call<LocacaoListCard>,
+                response: Response<LocacaoListCard>
+            ) {
+                if (response.isSuccessful) {
+                    response.body()?.let { imovel ->
+                        fillAnuncioInfo(imovel)
+                    }
+
+                }
+            }
+
+            override fun onFailure(call: Call<LocacaoListCard>, t: Throwable) {
                 Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
             }
 
