@@ -12,7 +12,7 @@
         android:layout_height="200dp">
 
         <ImageView
-            android:id="@+id/imagem"
+            android:id="@+id/tv_imagem"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -52,17 +52,17 @@
             android:text="Preço: R$ 1.500,00" />
 
         <Button
-            android:layout_marginLeft="-100dp"
-            android:layout_gravity="center"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="-100dp"
             android:layout_marginTop="40dp"
-            app:backgroundTint="@color/pink_bakground_app"
             android:fontFamily="arial"
-            android:text="Visitar"
             android:onClick="visitar"
+            android:text="Visitar"
             android:textColor="@color/white"
-            android:textFontWeight="900" />
+            android:textFontWeight="900"
+            app:backgroundTint="@color/pink_bakground_app" />
 
 
     </LinearLayout>

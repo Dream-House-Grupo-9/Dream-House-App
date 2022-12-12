@@ -1,15 +1,15 @@
 package com.dreamhouse.adapters
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
-import com.dreamhouse.models.LocacaoListCard
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.dreamhouse.R
+import com.dreamhouse.models.LocacaoListCard
+import com.dreamhouse.utils.pickFirstUrl
 
 class ImovelGridAdapter(
     private val context: Context,
@@ -41,14 +41,9 @@ class ImovelGridAdapter(
             imovel: LocacaoListCard,
             onImovelClickListener: (LocacaoListCard) -> Unit
         ) {
-//            Glide.with(itemView.context)
-//                .load(animal.urlImagem)
-//                .apply(
-//                    RequestOptions()
-//                        .placeholder(R.drawable.loading_animation)
-//                        .error(R.drawable.ic_pet_placeholder_image)
-//                )
-//                .into(itemView.findViewById(R.id.iv_picture))
+            Glide.with(itemView.context)
+                .load(imovel.image?.pickFirstUrl())
+                .into(itemView.findViewById(R.id.tv_imagem))
 
             itemView.findViewById<TextView>(R.id.id_txt_bairro).text = imovel.bairro
 
