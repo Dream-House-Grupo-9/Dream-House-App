@@ -52,18 +52,22 @@
             android:maxLength="25"
             android:text="Preço: R$ 1.500,00" />
 
-        <Button
-            android:layout_marginLeft="-110dp"
-            android:layout_gravity="center"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            app:backgroundTint="@color/pink_bakground_app"
-            android:fontFamily="arial"
-            android:text="Visitar"
-            android:onClick="visitar"
-            android:textColor="@color/white"
-            android:textFontWeight="900" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="-115dp">
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="arial"
+                android:onClick="visitar"
+                android:text="Visitar"
+                android:textColor="@color/white"
+                android:textFontWeight="900"
+                app:backgroundTint="@color/pink_bakground_app" />
+        </LinearLayout>
 
 
     </LinearLayout>
