@@ -3,7 +3,6 @@ package com.dreamhouse
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
@@ -20,41 +19,40 @@ import com.dreamhouse.services.LocacaoService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.io.File
 
 class RegisterLocation : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterLocationBinding
     private val request = Rest.getInstance().create(LocacaoService::class.java)
 
-    private val listImage = arrayOf("", "", "")
+    private val listImage = arrayOf("", "", "", "")
 
 
-    private val uris = mutableListOf<Uri?>(
-        null,
-        null,
-        null,
-        null
-    )
+//    private val uris = mutableListOf<Uri?>(
+//        null,
+//        null,
+//        null,
+//        null
+//    )
 
-    private var uriSelected: Uri? = null
+//    private var uriSelected: Uri? = null
     private var stringListImage = ""
 
-    private var imageSelected: ImageView? = null
+//    private var imageSelected: ImageView? = null
     private val imgurService = ImgurApiService()
 
-
-    private val actForResult = registerForActivityResult(
-        ActivityResultContracts.GetContent()
-    ) {
-        uriSelected = it
-        imageSelected?.setImageURI(uriSelected)
-        when (imageSelected?.id) {
-            R.id.image1 -> uris.add(0, uriSelected)
-            R.id.image2 -> uris.add(1, uriSelected)
-            R.id.image3 -> uris.add(2, uriSelected)
-            R.id.image4 -> uris.add(3, uriSelected)
-        }
-    }
+//
+//    private val actForResult = registerForActivityResult(
+//        ActivityResultContracts.GetContent()
+//    ) {
+//        uriSelected = it
+//        imageSelected?.setImageURI(uriSelected)
+//        when (imageSelected?.id) {
+//            R.id.image1 -> uris.add(0, uriSelected)
+//            R.id.image2 -> uris.add(1, uriSelected)
+//            R.id.image3 -> uris.add(2, uriSelected)
+//            R.id.image4 -> uris.add(3, uriSelected)
+//        }
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -93,62 +91,68 @@ class RegisterLocation : AppCompatActivity() {
         }
     }
 
-    private fun setupListeners() {
-
-        setupImageUpload(binding.image1)
-        setupImageUpload(binding.image2)
-        setupImageUpload(binding.image3)
-        setupImageUpload(binding.image4)
-
-        binding.btnAvancar.setOnClickListener {
-
-            listImage.forEachIndexed { index, item ->
-                if (item.isNotBlank()) {
-                    if (index != listImage.size - 1) {
-                        stringListImage += "$item,"
-                    } else {
-                        stringListImage += item
-                    }
-                }
-            }
-
-            createLocacao()
-        }
-    }
-
     private fun createLocacao() {
         val locacao = buildLocacao()
 
-        request.createLocacao(locacao).enqueue(object : Callback<Any> {
-            override fun onResponse(call: Call<Any>, response: Response<Any>) {
-                Toast.makeText(baseContext, "Criou locacao", Toast.LENGTH_SHORT).show()
-            }
-            override fun onFailure(call: Call<Any>, t: Throwable) {
-                Toast.makeText(baseContext, t.message, Toast.LENGTH_SHORT).show()
-            }
+        request.createLocacao(locacao).enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                if (response.isSuccessful) {
+                    Toast.makeText(baseContext, "Criou locacao", Toast.LENGTH_LONG).show()
+                    startActivity(Intent(baseContext, HomeActivity::class.java))
+                }
 
+            }
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+                Toast.makeText(baseContext, t.message, Toast.LENGTH_LONG).show()
+            }
         })
     }
 
-    private fun buildImagens(): List<File> {
-        val files = mutableListOf<File>()
-        uris.forEach { uri ->
-            files.add(File(uri.toString()))
-        }
-        return files
-    }
+//    private fun buildImagens(): List<File> {
+//        val files = mutableListOf<File>()
+//        uris.forEach { uri ->
+//            files.add(File(uri.toString()))
+//        }
+//        return files
+//    }
 
     private fun buildLocacao(): Locacao {
         return Locacao(
             binding.EtTitulo.text.toString(),
-            binding.ETBairro.text.toString(),
+            binding.EtTelefone.text.toString(),
             binding.ETCidade.text.toString(),
+            binding.ETBairro.text.toString(),
             binding.ETLogradouro.text.toString(),
+            binding.ETNumero.text.toString().toInt(),
+            binding.ETValDiario.text.toString().toDouble(),
+            "",
             binding.EtDescricao.text.toString(),
-            stringListImage,
-            ClientId(getSharedPreferences("USER", MODE_PRIVATE).getInt("id", 0))
+            ClientId(1)
         )
     }
+
+    private fun setupListeners() {
+
+//        setupImageUpload(binding.image1)
+//        setupImageUpload(binding.image2)
+//        setupImageUpload(binding.image3)
+//        setupImageUpload(binding.image4)
+
+        binding.btnAvancar.setOnClickListener {
+
+//            listImage.forEachIndexed { index, item ->
+//                if (item.isNotBlank()) {
+//                    if (index != listImage.size - 1) {
+//                        stringListImage += "$item,"
+//                    } else {
+//                        stringListImage += item
+//                    }
+//                }
+//            }
+            createLocacao()
+        }
+    }
+
 
     private fun postImageImgur(image: Bitmap, index: Int) {
         imgurService.uploadImageToImgur(image, index, this)

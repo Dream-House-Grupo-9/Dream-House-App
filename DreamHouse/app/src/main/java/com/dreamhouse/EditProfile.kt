@@ -14,4 +14,8 @@ class EditProfile : AppCompatActivity() {
     fun voltar(view: View){
         startActivity(Intent(baseContext, HomeActivity::class.java))
     }
+
+    fun salvar(){
+
+    }
 }

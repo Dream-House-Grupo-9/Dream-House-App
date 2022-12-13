@@ -44,7 +44,6 @@ class CardLocacao : AppCompatActivity() {
         )
     }
 
-
     fun registrationLocation(view: View) {
         val screenLocation = Intent(
             this,

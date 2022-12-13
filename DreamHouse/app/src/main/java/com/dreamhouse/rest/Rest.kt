@@ -6,6 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object Rest {
     private const val baseUrl = "http://192.168.15.18:8080"
+
     private const val BASE_URL_IMGUR = "https://api.imgur.com"
 
     fun getInstance(): Retrofit {
