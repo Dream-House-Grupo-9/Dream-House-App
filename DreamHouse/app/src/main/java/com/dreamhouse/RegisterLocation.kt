@@ -91,43 +91,20 @@ class RegisterLocation : AppCompatActivity() {
         }
     }
 
-    private fun setupListeners() {
-
-        setupImageUpload(binding.image1)
-        setupImageUpload(binding.image2)
-        setupImageUpload(binding.image3)
-        setupImageUpload(binding.image4)
-
-        binding.btnAvancar.setOnClickListener {
-
-            listImage.forEachIndexed { index, item ->
-                if (item.isNotBlank()) {
-                    if (index != listImage.size - 1) {
-                        stringListImage += "$item,"
-                    } else {
-                        stringListImage += item
-                    }
-                }
-            }
-            createLocacao()
-        }
-    }
-
     private fun createLocacao() {
         val locacao = buildLocacao()
 
-        request.createLocacao(locacao).enqueue(object : Callback<Any> {
-            override fun onResponse(call: Call<Any>, response: Response<Any>) {
+        request.createLocacao(locacao).enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 if (response.isSuccessful) {
-                    Toast.makeText(baseContext, "Criou locacao", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(baseContext, CardLocacao::class.java))
-
+                    Toast.makeText(baseContext, "Criou locacao", Toast.LENGTH_LONG).show()
+                    startActivity(Intent(baseContext, HomeActivity::class.java))
                 }
-            }
-            override fun onFailure(call: Call<Any>, t: Throwable) {
-                Toast.makeText(baseContext, t.message, Toast.LENGTH_SHORT).show()
-            }
 
+            }
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+                Toast.makeText(baseContext, t.message, Toast.LENGTH_LONG).show()
+            }
         })
     }
 
@@ -143,17 +120,39 @@ class RegisterLocation : AppCompatActivity() {
         return Locacao(
             binding.EtTitulo.text.toString(),
             binding.EtTelefone.text.toString(),
-            binding.ETCategoria.text.toString(),
-            binding.ETBairro.text.toString(),
             binding.ETCidade.text.toString(),
+            binding.ETBairro.text.toString(),
             binding.ETLogradouro.text.toString(),
             binding.ETNumero.text.toString().toInt(),
-            binding.EtDescricao.text.toString(),
             binding.ETValDiario.text.toString().toDouble(),
-            stringListImage,
-            ClientId(getSharedPreferences("USER", MODE_PRIVATE).getInt("id", 0))
+            "",
+            binding.EtDescricao.text.toString(),
+            ClientId(1)
         )
     }
+
+    private fun setupListeners() {
+
+//        setupImageUpload(binding.image1)
+//        setupImageUpload(binding.image2)
+//        setupImageUpload(binding.image3)
+//        setupImageUpload(binding.image4)
+
+        binding.btnAvancar.setOnClickListener {
+
+//            listImage.forEachIndexed { index, item ->
+//                if (item.isNotBlank()) {
+//                    if (index != listImage.size - 1) {
+//                        stringListImage += "$item,"
+//                    } else {
+//                        stringListImage += item
+//                    }
+//                }
+//            }
+            createLocacao()
+        }
+    }
+
 
     private fun postImageImgur(image: Bitmap, index: Int) {
         imgurService.uploadImageToImgur(image, index, this)

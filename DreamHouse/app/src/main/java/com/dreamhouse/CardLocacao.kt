@@ -15,6 +15,7 @@ class CardLocacao : AppCompatActivity() {
         setContentView(binding.root)
     }
 
+
     fun registrationLocation(view: View) {
         val screenLocation = Intent(
             this,

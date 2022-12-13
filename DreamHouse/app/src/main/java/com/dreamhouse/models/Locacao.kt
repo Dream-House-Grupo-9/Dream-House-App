@@ -2,14 +2,24 @@ package com.dreamhouse.models
 
 data class Locacao(
     val titulo: String,
-    val telefone: String,
-    val categoria: String,
+    val telefoneLocatario: String,
     val cidade: String,
     val bairro: String,
     val logradouro: String,
     val numero: Int,
+    val valDiario: Double,
     val image: String,
-    val diaria: Double,
     val descricao: String,
     val cliente: ClientId
 )
+
+//{   "titulo": "Casa zona leste ",
+// "telefoneLocatario": "11976137480",
+// "cidade": "Osasco",
+// "bairro": "Bairro do Henri",
+// "logradouro": "rua do Henri",
+// "numero": 1,
+// "valDiario": 85.10,
+// "image": "imagem1,imagem2,imagem3,imagem4",
+// "descricao": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+// "cliente": {      "id": 1    } }
