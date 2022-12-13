@@ -88,4 +88,17 @@
     </LinearLayout>
 
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="670dp"
+        android:fontFamily="arial"
+        android:text="Ver mais"
+        android:onClick="seeMore"
+        android:textColor="@color/white"
+        android:textFontWeight="500"
+        app:backgroundTint="@color/pink_bakground_app" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

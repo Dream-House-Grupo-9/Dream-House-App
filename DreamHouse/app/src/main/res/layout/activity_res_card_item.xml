@@ -12,7 +12,7 @@
         android:layout_height="200dp">
 
         <ImageView
-            android:id="@+id/imagem"
+            android:id="@+id/tv_imagem"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -28,6 +28,7 @@
         android:padding="5dp">
 
         <TextView
+            android:id="@+id/id_txt_bairro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -36,6 +37,7 @@
 
 
         <TextView
+            android:id="@+id/id_txt_cidade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="-77dp"
@@ -45,6 +47,7 @@
 
 
         <TextView
+            android:id="@+id/id_txt_preco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="-90dp"
@@ -52,23 +55,18 @@
             android:maxLength="25"
             android:text="Preço: R$ 1.500,00" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="70dp"
-            android:layout_marginLeft="-115dp">
-
-            <Button
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="arial"
-                android:onClick="visitar"
-                android:text="Visitar"
-                android:textColor="@color/white"
-                android:textFontWeight="900"
-                app:backgroundTint="@color/pink_bakground_app" />
-        </LinearLayout>
-
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="-100dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="arial"
+            android:onClick="visitar"
+            android:text="Visitar"
+            android:textColor="@color/white"
+            android:textFontWeight="900"
+            app:backgroundTint="@color/pink_bakground_app" />
 
     </LinearLayout>
 

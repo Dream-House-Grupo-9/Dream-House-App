@@ -26,6 +26,9 @@
             android:name=".DescriptionLocation"
             android:exported="false" />
         <activity
+            android:name=".CardLocacao"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false"
             android:label="@string/title_activity_home"
