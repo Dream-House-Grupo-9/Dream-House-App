@@ -57,13 +57,6 @@
                 android:src="@drawable/favoritar"
                 android:layout_marginLeft="10sp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="10"
-                android:layout_marginLeft="3sp"
-                android:textSize="20sp" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -110,15 +103,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CEP:  "
+                    android:text="Valor Diário: R$ "
                     android:textSize="7pt"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/tv_cep"
+                    android:id="@+id/tv_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="04119-002"
+                    android:text="20.00"
                     android:textSize="7pt" />
 
             </LinearLayout>
