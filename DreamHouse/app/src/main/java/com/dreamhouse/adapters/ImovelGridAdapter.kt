@@ -49,6 +49,8 @@ class ImovelGridAdapter(
 
             itemView.findViewById<TextView>(R.id.id_txt_cidade).text = imovel.cidade
 
+            itemView.findViewById<TextView>(R.id.id_txt_preco).text = imovel.valDiario
+
 
             itemView.setOnClickListener {
                 onImovelClickListener(imovel)
