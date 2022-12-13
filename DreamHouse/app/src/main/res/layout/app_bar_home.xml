@@ -57,6 +57,7 @@
             android:background="@android:color/transparent"
             android:drawableTop="@drawable/ic_add_ad"
             android:drawableTint="@color/pink_bakground_app"
+            android:onClick="irCadastro"
             android:paddingTop="8dp"
             android:text="ANUNCIAR"
             android:textColor="@color/pink_bakground_app" />
@@ -82,23 +83,10 @@
             android:drawableTop="@drawable/ic_menu_profile"
             android:drawableTint="@color/pink_bakground_app"
             android:paddingTop="8dp"
+            android:onClick="irPerfil"
             android:text="PERFIL"
             android:textColor="@color/pink_bakground_app"/>
 
     </LinearLayout>
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="670dp"
-        android:fontFamily="arial"
-        android:text="Ver mais"
-        android:onClick="seeMore"
-        android:textColor="@color/white"
-        android:textFontWeight="500"
-        app:backgroundTint="@color/pink_bakground_app" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,32 +17,6 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".LocationDetail"
-            android:exported="false" />
-        <activity
-            android:name=".EditProfile"
-            android:exported="false" />
-        <activity
-            android:name=".DescriptionLocation"
-            android:exported="false" />
-        <activity
-            android:name=".CardLocacao"
-            android:exported="false" />
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false"
-            android:label="@string/title_activity_home"
-            android:theme="@style/Theme.DreamHouse.NoActionBar" />
-        <activity
-            android:name=".RegisterLocation"
-            android:exported="false" />
-        <activity
-            android:name=".ErrorScreen"
-            android:exported="false" />
-        <activity
-            android:name=".RegisterImage"
-            android:exported="false" />
-        <activity
             android:name=".LoginScreen"
             android:exported="true">
             <intent-filter>
@@ -51,8 +25,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.DreamHouse.NoActionBar" />
+        <activity
+            android:name=".LocationDetail"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Anuncio"
+            android:exported="false" />
         <activity
             android:name=".CardLocacao"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterLocation"
+            android:exported="false" />
+        <activity
+            android:name=".ErrorScreen"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
@@ -61,5 +56,4 @@
             android:name=".MainActivity"
             android:exported="false" />
     </application>
-
 </manifest>

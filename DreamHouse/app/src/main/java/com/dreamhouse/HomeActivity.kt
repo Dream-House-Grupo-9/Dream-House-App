@@ -24,7 +24,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun initVariables() {
-        recyclerView = findViewById(R.id.recyclerContainer)
+        recyclerView = findViewById(R.id.recycler_view)
     }
 
     private fun initUI() {
@@ -32,15 +32,23 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun setDataToRecyclerView() {
-        imovelService.getFourCardImoveis(
+        imovelService.getCardImoveis(
             context = this,
             intent = Intent(this, Anuncio::class.java),
             recyclerView = recyclerView
         )
     }
 
-    fun seeMore(view: View) {
-        startActivity(Intent(baseContext, CardLocacao::class.java))
+    fun visitar(view: View) {
+        startActivity(Intent(baseContext, Anuncio::class.java))
+    }
+
+    fun irCadastro(view: View) {
+        startActivity(Intent(baseContext, RegisterLocation::class.java))
+    }
+
+    fun irPerfil(view: View) {
+        startActivity(Intent(baseContext, EditProfile::class.java))
     }
 
 }
