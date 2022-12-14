@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="Anuncio">
+    tools:context=".Anuncio">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -89,13 +89,6 @@
                 android:src="@drawable/favoritar"
                 android:layout_marginLeft="10sp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="10"
-                android:layout_marginLeft="3sp"
-                android:textSize="20sp" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -105,6 +98,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_bairro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Apartamento Vila Mariana - SP São Paulo"
@@ -124,6 +118,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_andress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rua Afonso Celso, 190 - Vila Mariana, SP"
@@ -140,14 +135,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CEP:  "
+                    android:text="Valor Diário: R$ "
                     android:textSize="7pt"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="04119-002"
+                    android:text="20.00"
                     android:textSize="7pt" />
 
             </LinearLayout>
@@ -166,6 +162,7 @@
 
 
                 <TextView
+                    android:id="@+id/tv_perfil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nelson Santos"
@@ -187,6 +184,7 @@
 
 
                 <TextView
+                    android:id="@+id/tv_zap"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="(11) 94242-8922"
@@ -221,6 +219,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/tv_description"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"

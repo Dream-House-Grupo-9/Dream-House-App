@@ -54,7 +54,7 @@
                 android:layout_marginTop="30dp"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="2"
-                tools:itemCount="6"
+                tools:itemCount="8"
                 tools:listitem="@layout/activity_res_card_item">
 
             </androidx.recyclerview.widget.RecyclerView>

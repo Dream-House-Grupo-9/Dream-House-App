@@ -29,7 +29,7 @@
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation_linear_layout"
         app:layout_constraintTop_toBottomOf="@id/title"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="0dp">
 
         <androidx.recyclerview.widget.RecyclerView
@@ -57,6 +57,7 @@
             android:background="@android:color/transparent"
             android:drawableTop="@drawable/ic_add_ad"
             android:drawableTint="@color/pink_bakground_app"
+            android:onClick="irCadastro"
             android:paddingTop="8dp"
             android:text="ANUNCIAR"
             android:textColor="@color/pink_bakground_app" />
@@ -82,10 +83,10 @@
             android:drawableTop="@drawable/ic_menu_profile"
             android:drawableTint="@color/pink_bakground_app"
             android:paddingTop="8dp"
+            android:onClick="irPerfil"
             android:text="PERFIL"
             android:textColor="@color/pink_bakground_app"/>
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

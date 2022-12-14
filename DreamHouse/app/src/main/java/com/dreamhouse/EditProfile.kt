@@ -18,4 +18,14 @@ class EditProfile : AppCompatActivity() {
     fun salvar(){
 
     }
+
+    fun irCadastro(view: View) {
+        startActivity(Intent(baseContext, RegisterLocation::class.java))
+    }
+
+    fun irAnuncios(view: View) {
+        startActivity(Intent(baseContext, HomeActivity::class.java))
+    }
+
+
 }

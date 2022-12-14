@@ -19,8 +19,8 @@ import retrofit2.Response
 class LoginScreen : AppCompatActivity() {
     private lateinit var etEmail: EditText
     private lateinit var etSenha: EditText
-    private val retrofit = Rest.getInstance()
     private lateinit var binding: LoginScreenBinding
+    private val request = Rest.getInstance().create(UsuarioService::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,28 +38,26 @@ class LoginScreen : AppCompatActivity() {
     }
 
     fun login(view: View) {
-        val senha = etSenha.text.toString()
         val email = etEmail.text.toString()
+        val senha = etSenha.text.toString()
         val body = UsuarioLogin(email, senha)
-        val usuarioRequest = retrofit.create(UsuarioService::class.java)
 
-        usuarioRequest.login(body).enqueue(
-            object : Callback<LoginResponse> {
-                override fun onResponse(
-                    call: Call<LoginResponse>,
-                    response: Response<LoginResponse>
-                ) {
+        request.login(body).enqueue(object : Callback<LoginResponse> {
+            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                    println("body" + response.body())
                     if (response.isSuccessful) {
                         val editor = getSharedPreferences(
                             "USER",
                             Context.MODE_PRIVATE
                         ).edit()
-                        editor.putInt("id", response.body()?.idCliente!!)
+                        editor.putInt( "id", response.body()?.idCliente!!)
+                        println(response.body())
                         editor.apply()
-                        startActivity(Intent(baseContext, RegisterLocation::class.java))
+                        startActivity(Intent(baseContext, HomeActivity::class.java))
                     } else {
                         Toast.makeText(
                             baseContext, "Email ou senha incorretos!", Toast.LENGTH_LONG
+
                         ).show()
                     }
                 }
@@ -67,7 +65,6 @@ class LoginScreen : AppCompatActivity() {
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                     Toast.makeText(baseContext, t.message, Toast.LENGTH_LONG).show()
                 }
-
             }
         )
     }
