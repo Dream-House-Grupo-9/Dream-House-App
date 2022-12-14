@@ -83,8 +83,8 @@
             android:drawableTop="@drawable/ic_menu_profile"
             android:drawableTint="@color/pink_bakground_app"
             android:paddingTop="8dp"
-            android:onClick="irPerfil"
-            android:text="PERFIL"
+            android:onClick="logout"
+            android:text="LOGOUT"
             android:textColor="@color/pink_bakground_app"/>
 
     </LinearLayout>

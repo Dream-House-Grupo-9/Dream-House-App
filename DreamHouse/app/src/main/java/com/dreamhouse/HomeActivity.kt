@@ -48,8 +48,9 @@ class HomeActivity : AppCompatActivity() {
         startActivity(Intent(baseContext, RegisterLocation::class.java))
     }
 
-    fun irPerfil(view: View) {
-        startActivity(Intent(baseContext, EditProfile::class.java))
+    fun logout(view: View) {
+
+        startActivity(Intent(baseContext, LoginScreen::class.java))
     }
 
 }

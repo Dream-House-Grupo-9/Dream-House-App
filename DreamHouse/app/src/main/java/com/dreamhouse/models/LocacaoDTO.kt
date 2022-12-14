@@ -1,7 +1,10 @@
 package com.dreamhouse.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import java.util.*
 
+@Parcelize
 data class LocacaoDTO(
     val id: Int,
     val titulo: String,
@@ -18,16 +21,18 @@ data class LocacaoDTO(
     val finalDisponibilidade: Date?,
     val cliente: ClienteDTO,
     val detalhe: DetalheDTO?
-)
+): Parcelable
 
+@Parcelize
 data class ClienteDTO(
     val id: Int,
     val nome: String,
     val email: String,
     val senha: String,
     val autenticado: Boolean
-)
+) : Parcelable
 
+@Parcelize
 data class DetalheDTO(
     val idDetalhesAnuncio: Int,
     val ativoDiaria: Boolean,
@@ -43,4 +48,4 @@ data class DetalheDTO(
     val mobiliada: Boolean,
     val categoria: String,
     val qtdCurtidas: Int
-)
+) : Parcelable

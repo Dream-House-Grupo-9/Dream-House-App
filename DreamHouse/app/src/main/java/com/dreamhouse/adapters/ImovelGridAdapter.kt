@@ -30,13 +30,14 @@ class ImovelGridAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val imovel = imoveisList[position]
-        holder.bind(imovel, onImovelClickListener)
+        holder.bind(context, imovel, onImovelClickListener)
     }
 
     class ViewHolder(
         itemView: View
     ) : RecyclerView.ViewHolder(itemView) {
         fun bind(
+            context: Context,
             imovel: LocacaoListCard,
             onImovelClickListener: (LocacaoListCard) -> Unit
         ) {
@@ -56,7 +57,6 @@ class ImovelGridAdapter(
             itemView.findViewById<TextView>(R.id.id_txt_preco).text = "R$: " + imovel.valDiario
 
             itemView.findViewById<TextView>(R.id.id_txt_logradouro).text = imovel.logradouro
-
 
             itemView.setOnClickListener {
                 onImovelClickListener(imovel)

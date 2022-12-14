@@ -34,6 +34,7 @@ class ImovelApiService {
                     response.body()?.let { listaImovel ->
                         recyclerView.adapter =
                             ImovelGridAdapter(context = context, listaImovel) { imovel ->
+                                intent.putExtra("imovel", imovel)
                                 context.startActivity(intent)
                                 (context as Activity).finish()
                             }
@@ -48,62 +49,70 @@ class ImovelApiService {
         })
     }
 
-    fun getFourCardImoveis(
-        context: Context,
-        intent: Intent,
-        recyclerView: RecyclerView
-    ) {
+//    fun getFourCardImoveis(
+//        context: Context,
+//        intent: Intent,
+//        recyclerView: RecyclerView
+//    ) {
+//
+//        val getFourAnuncios = imovelApiConnection.getFourLocations()
+//
+//        getFourAnuncios.enqueue(object : Callback<List<LocacaoListCard>> {
+//            override fun onResponse(
+//                call: Call<List<LocacaoListCard>>,
+//                response: Response<List<LocacaoListCard>>
+//            ) {
+//                if (response.isSuccessful) {
+//                    response.body()?.let { listaImovel ->
+//                        recyclerView.adapter =
+//                            ImovelGridAdapter(context = context, listaImovel) { imovel ->
+//                                context.startActivity(intent)
+//                                (context as Activity).finish()
+//                            }
+//                    }
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<List<LocacaoListCard>>, t: Throwable) {
+//                Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
+//            }
+//
+//        })
+//    }
 
-        val getFourAnuncios = imovelApiConnection.getFourLocations()
-
-        getFourAnuncios.enqueue(object : Callback<List<LocacaoListCard>> {
-            override fun onResponse(
-                call: Call<List<LocacaoListCard>>,
-                response: Response<List<LocacaoListCard>>
-            ) {
-                if (response.isSuccessful) {
-                    response.body()?.let { listaImovel ->
-                        recyclerView.adapter =
-                            ImovelGridAdapter(context = context, listaImovel) { imovel ->
-                                context.startActivity(intent)
-                                (context as Activity).finish()
-                            }
-                    }
-                }
-            }
-
-            override fun onFailure(call: Call<List<LocacaoListCard>>, t: Throwable) {
-                Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
-            }
-
-        })
-    }
-
-    fun getDetalhesAnuncio(
-        idImovel: String,
-        context: Context,
-        fillAnuncioInfo: (LocacaoListCard) -> Unit
-    ) {
-        val getAnunciosDetalhes = imovelApiConnection.getDetailsLocations(idImovel = idImovel)
-
-        getAnunciosDetalhes.enqueue(object : Callback<LocacaoListCard> {
-            override fun onResponse(
-                call: Call<LocacaoListCard>,
-                response: Response<LocacaoListCard>
-            ) {
-                if (response.isSuccessful) {
-                    response.body()?.let { imovel ->
-                        fillAnuncioInfo(imovel)
-                    }
-
-                }
-            }
-
-            override fun onFailure(call: Call<LocacaoListCard>, t: Throwable) {
-                Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
-            }
-
-        })
-    }
+//    fun getDetalhesAnuncio(
+//        idImovel: Int,
+//        context: Context,
+//        intent: Intent,
+//        recyclerView: RecyclerView,
+//    ) {
+//        val getAnunciosDetalhes = imovelApiConnection.getAnuncio()
+//
+//        getAnunciosDetalhes.enqueue(object : Callback<List<LocacaoListCard>> {
+//            override fun onResponse(
+//                call: Call<List<LocacaoListCard>>,
+//                response: Response<List<LocacaoListCard>>
+//            ) {
+//                if (response.isSuccessful) {
+//                    response.body()?.let { listaImovel ->
+//                        recyclerView.adapter =
+//                            ImovelGridAdapter(context, listaImovel) { imovel ->
+//                                intent.putExtra("imovel", imovel)
+//                                context.startActivity(intent)
+//                                (context as Activity).finish()
+//
+//                            }
+//                    }
+//
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<List<LocacaoListCard>>, t: Throwable) {
+//                Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
+//            }
+//
+//        })
+//    }
 
 }
+

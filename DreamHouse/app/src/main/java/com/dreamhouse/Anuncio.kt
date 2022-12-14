@@ -27,6 +27,7 @@ class Anuncio : AppCompatActivity() {
     }
 
     private fun initVariables() {
+        imovel = intent.getParcelableExtra("imovel")!!
         imovelBairro = findViewById(R.id.tv_bairro)
         imovelEndereco = findViewById(R.id.tv_andress)
         imovelValor = findViewById(R.id.tv_value)
@@ -36,23 +37,22 @@ class Anuncio : AppCompatActivity() {
     }
 
     private fun initUI() {
-        getImovelData()
+        fillImovelInfo()
     }
 
-    private fun getImovelData() {
-        imovelService.getDetalhesAnuncio(
-            idImovel = imovel.id.toString(),
-            context = this
-        ) { imovel ->
-            fillImovelInfo(imovel)
-        }
-    }
+//    private fun getImovelData() {
+//        imovelService.getDetalhesAnuncio(
+//            idImovel = imovel.id,
+//            context = this
+//        ) { imovel ->
+//            fillImovelInfo(imovel)
+//        }
+//    }
 
-    private fun fillImovelInfo(imovel: LocacaoListCard) {
+    private fun fillImovelInfo() {
         imovelBairro.text = imovel.bairro
         imovelEndereco.text = imovel.logradouro
-        imovelValor.text = imovel.valDiario
-//        imovelPerfil.text = imovel.
+        imovelValor.text = imovel.valDiario.toString()
         imovelZap.text = imovel.telefoneLocatario
         imovelDescricao.text = imovel.descricao
     }

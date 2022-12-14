@@ -97,8 +97,8 @@
 <!--                android:layout_gravity="center"-->
 <!--                android:layout_marginTop="10dp"-->
 <!--                android:fontFamily="arial"-->
-<!--                android:onClick="salvar"-->
-<!--                android:text="Salvar"-->
+<!--                android:onClick="sair"-->
+<!--                android:text="logout"-->
 <!--                android:textColor="@color/white"-->
 <!--                android:textFontWeight="900"-->
 <!--                app:backgroundTint="@color/pink_bakground_app" />-->
@@ -146,7 +146,7 @@
             android:drawableTop="@drawable/ic_menu_profile"
             android:drawableTint="@color/pink_bakground_app"
             android:paddingTop="8dp"
-            android:text="PERFIL"
+            android:text="Logout"
             android:textColor="@color/pink_bakground_app"/>
 
     </LinearLayout>

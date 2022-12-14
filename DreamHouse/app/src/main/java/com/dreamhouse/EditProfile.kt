@@ -15,9 +15,7 @@ class EditProfile : AppCompatActivity() {
         startActivity(Intent(baseContext, HomeActivity::class.java))
     }
 
-    fun salvar(){
 
-    }
 
     fun irCadastro(view: View) {
         startActivity(Intent(baseContext, RegisterLocation::class.java))

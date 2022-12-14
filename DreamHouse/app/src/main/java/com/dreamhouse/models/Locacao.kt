@@ -1,5 +1,10 @@
 package com.dreamhouse.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+
+@Parcelize
 data class Locacao(
     val titulo: String,
     val telefoneLocatario: String,
@@ -11,7 +16,7 @@ data class Locacao(
     val image: String,
     val descricao: String,
     val cliente: ClientId
-)
+) : Parcelable
 
 //{   "titulo": "Casa zona leste ",
 // "telefoneLocatario": "11976137480",
