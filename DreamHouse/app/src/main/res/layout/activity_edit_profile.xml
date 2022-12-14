@@ -12,28 +12,23 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="660dp"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
         android:gravity="center"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/edit_profile"
-            android:textAlignment="center"
-            android:textFontWeight="600"
-            android:textSize="20dp" />
-
         <ImageView
             android:layout_width="80dp"
-            android:layout_height="0dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
             android:src="@drawable/user_alt" />
 
+    </LinearLayout>
+
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
             android:orientation="vertical">
 
@@ -65,51 +60,50 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp">
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="350dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginTop="20dp">-->
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/senha_atual"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_et_base"
-                    android:hint="Senha"
-                    android:inputType="textPassword" />
-            </com.google.android.material.textfield.TextInputLayout>
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/senha_atual"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@drawable/bg_et_base"-->
+<!--                    android:hint="Senha"-->
+<!--                    android:inputType="textPassword" />-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp">
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="350dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginTop="20dp">-->
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/nova_senha"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_et_base"
-                    android:hint="Nova Senha"
-                    android:inputType="textPassword" />
-            </com.google.android.material.textfield.TextInputLayout>
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/nova_senha"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@drawable/bg_et_base"-->
+<!--                    android:hint="Nova Senha"-->
+<!--                    android:inputType="textPassword" />-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
-            <Button
-                android:id="@+id/btnLogin"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:fontFamily="arial"
-                android:onClick="salvar"
-                android:text="Salvar"
-                android:textColor="@color/white"
-                android:textFontWeight="900"
-                app:backgroundTint="@color/pink_bakground_app" />
+<!--            <Button-->
+<!--                android:id="@+id/btnLogin"-->
+<!--                android:layout_width="350dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:fontFamily="arial"-->
+<!--                android:onClick="salvar"-->
+<!--                android:text="Salvar"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textFontWeight="900"-->
+<!--                app:backgroundTint="@color/pink_bakground_app" />-->
         </LinearLayout>
 
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/bottom_navigation_linear_layout"

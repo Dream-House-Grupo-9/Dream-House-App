@@ -6,7 +6,6 @@ import android.content.Intent
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.dreamhouse.adapters.ImovelGridAdapter
-import com.dreamhouse.models.Locacao
 import com.dreamhouse.models.LocacaoListCard
 import com.dreamhouse.rest.Rest
 import com.dreamhouse.services.LocacaoService
@@ -85,9 +84,9 @@ class ImovelApiService {
         context: Context,
         fillAnuncioInfo: (LocacaoListCard) -> Unit
     ) {
-        val getAnimaisNaoAdotados = imovelApiConnection.getDetailsLocations(idImovel = idImovel)
+        val getAnunciosDetalhes = imovelApiConnection.getDetailsLocations(idImovel = idImovel)
 
-        getAnimaisNaoAdotados.enqueue(object : Callback<LocacaoListCard> {
+        getAnunciosDetalhes.enqueue(object : Callback<LocacaoListCard> {
             override fun onResponse(
                 call: Call<LocacaoListCard>,
                 response: Response<LocacaoListCard>

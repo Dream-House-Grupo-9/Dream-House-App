@@ -40,9 +40,9 @@ class HomeActivity : AppCompatActivity() {
         )
     }
 
-    fun visitar(view: View) {
-        startActivity(Intent(baseContext, Anuncio::class.java))
-    }
+//    fun visitar(view: View) {
+//        startActivity(Intent(baseContext, Anuncio::class.java))
+//    }
 
     fun irCadastro(view: View) {
         startActivity(Intent(baseContext, RegisterLocation::class.java))
