@@ -10,6 +10,7 @@ import com.dreamhouse.network.ImovelApiService
 
 class Anuncio : AppCompatActivity() {
     private lateinit var imovel: LocacaoListCard
+    private lateinit var imovelImage: TextView
     private lateinit var imovelBairro: TextView
     private lateinit var imovelEndereco: TextView
     private lateinit var imovelPerfil: TextView
