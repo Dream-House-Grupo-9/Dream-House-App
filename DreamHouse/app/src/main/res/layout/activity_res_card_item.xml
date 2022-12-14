@@ -80,7 +80,7 @@
                 android:layout_marginTop="4dp"
                 android:fontFamily="arial"
                 android:onClick="visitar"
-                android:text="Visitar"
+                android:text="@string/visit"
                 android:textColor="@color/white"
                 android:textFontWeight="1000"
                 android:textSize="12sp"
