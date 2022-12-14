@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dreamhouse.databinding.ActivityHomeBinding
 import com.dreamhouse.network.ImovelApiService
 
+
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding

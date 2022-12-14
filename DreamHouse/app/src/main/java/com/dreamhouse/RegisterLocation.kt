@@ -98,7 +98,7 @@ class RegisterLocation : AppCompatActivity() {
             binding.ETValDiario.text.toString().toDouble(),
             stringListImage,
             binding.EtDescricao.text.toString(),
-            ClientId(3)
+            ClientId(1)
         )
     }
 
